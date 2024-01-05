@@ -14,3 +14,6 @@
 *.loq
 *.run
 *.swp
+*.fdb_latexmk
+*.run.xml
+*.synctex*
