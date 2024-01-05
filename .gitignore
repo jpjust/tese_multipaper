@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.bcf
+*.brf
+*.blg
+*.fdb
+*.fls
+*.toc
+*.out
+*.loa
+*.lof
+*.log
+*.lot
+*.loq
+*.run
+*.swp
