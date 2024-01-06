@@ -1,8 +1,7 @@
 % --------------------------------------------------
 % Capítulo 2: Posicionamento de EDUs
 % --------------------------------------------------
-\chapter{On the Positioning of Emergencies Detection Units Based on Geospatial Data of Urban Response Centres}
-\label{cap:posicionamento}
+\chapter{On the Positioning of Emergencies Detection Units Based on Geospatial Data of Urban Response Centres}\label{cap:posicionamento}
 
 \begin{refsection}
 
@@ -12,8 +11,7 @@ Urban areas have been subject to emergency situations with different causes and 
 
 \textbf{Keywords:} Smart cities, Sustainable and resilient cities, Emergency detection, Sensors positioning, Urban infrastructure.
 
-\section{Introduction}
-\label{c2:introduction}
+\section{Introduction}\label{c2:introduction}
 
 The development of more sustainable and resilient cities has been a major goal when the intense urbanisation process and the climatic changes are posed as dramatic challenges of our times \cite{surveycity3}. Lately, with the advent of new hardware, software, and communication technologies to support the development of more comprehensive cyber-physical systems \cite{surveycityPlatform1,surveycityPlatform2,surveycityPlatform3}, smart cities initiatives have emerged to bring innovative solutions to such complex challenges. In this context, some systems that are conceived to detect one or more types of urban emergencies and to act properly have gained attention, opening a new age for emergency and disaster management \cite{surveyEmergencies}. 
 
@@ -31,25 +29,23 @@ Four algorithms will be proposed to indicate the positions of the EDUs: Random, 
 Figure \ref{fig:smartcity} presents a conceptual representation of how mitigation zones can be exploited to support the positioning of sensor nodes. The idea is that mitigation zones may be processed as data layers, each one comprising a particular perception of a target area according to the desired level of details being modelled.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{Chapters/2-EDUs/images/map_layers.pdf}
-    \caption{A conceptual representation for the definition of mitigation zones in a city.}
-    \label{fig:smartcity}
+  \centering
+  \includegraphics[width=0.7\linewidth]{Chapters/2-EDUs/images/map_layers.pdf}
+  \caption{A conceptual representation for the definition of mitigation zones in a city.}\label{fig:smartcity}
 \end{figure}
 
 Therefore, considering the complexities of the presented challenges and the relevance of emergencies detection and mitigation for the creation of more sustainable and resilient cities, the contributions of this article are threefold, being described as follows:
 
 \begin{itemize}
-    \item Mathematical definitions for the concepts of Area of Influence, Mitigation Zone and Point of Interest, as well as the formulations to compute the severity indexes;
-    \item The proposal of four EDUs positioning algorithms, with different expected results and costs;
-    \item Experimental evaluations of EDUs positioning in two real cities, for different algorithms and input parameters.
+  \item Mathematical definitions for the concepts of Area of Influence, Mitigation Zone and Point of Interest, as well as the formulations to compute the severity indexes;
+  \item The proposal of four EDUs positioning algorithms, with different expected results and costs;
+  \item Experimental evaluations of EDUs positioning in two real cities, for different algorithms and input parameters.
 \end{itemize}
 
 The remainder of this article is organized as follows. Section \ref{S:2} presents related works in this area. The proposed mathematical model to compute mitigation zones and PoIs is described in Section \ref{S:3}. Section \ref{S:4} presents the four proposed EDUs positioning algorithms. Section \ref{S:5} brings experimental results and performance assessments. Final discussions and future directions are stated in Section \ref{S:6}. At last, conclusions and references are presented.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Related works}
-\label{S:2}
+\section{Related works}\label{S:2}
 
 This work is concerned with algorithms to compute suggested deployment positions for multi-sensor Emergencies Detection Units (EDUs) in a city, taking as reference the existence of response centres when defining mitigation zones. Hence, related works addressing the use of geospatial data in smart cities, as well as the positioning of sensors within an urban scenario, were reviewed and discussed, supporting the developments in this article.
 
@@ -73,41 +69,39 @@ At this point, it is important to note that geospatial data can be retrieved fro
 Table \ref{Table:related} summarises previous works in the literature, highlighting the employed source of geospatial data. 
 
 \begin{table}
-    \centering
-    \caption{Some works exploiting geospatial data to support sensors positioning and deployment.}
-    \label{Table:related}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Work} & \textbf{Data source} & \textbf{City} & \textbf{Objective} \\ 
-        \hline
-        \cite{positioning1} \cite{positioning1}  &  OpenStreetMap & many, Turkey & Roads monitoring\\ 
-        \hline
-        \cite{positions2} \cite{positions2}  & Experts in the target city & Porto, Portugal & City livinglab \\ 
-        \hline
-        \cite{positioning3} \cite{positioning3} & Simplified geographical area & New York, USA & Generic sensing \\ 
-        \hline
-        \cite{twitterGeospatialSensors} \cite{twitterGeospatialSensors} & Social media & New York, USA & Sensors calibration \\ 
-        \hline
-        \cite{positioning4} \cite{positioning4} & Group of existing buildings & Santiago, Chile & Monitoring of particulate matter \\ 
-        \hline
-        \cite{positioning5} \cite{positioning5} &  OpenStreetMap & Seoul, South Korea & Air quality monitoring \\ 
-        \hline
-    \end{tabular}
+  \centering
+  \caption{Some works exploiting geospatial data to support sensors positioning and deployment.}
+  \label{Table:related}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{c|c|c|c}
+    \textbf{Work} & \textbf{Data source} & \textbf{City} & \textbf{Objective} \\ 
+    \hline
+    \cite{positioning1}  &  OpenStreetMap & many, Turkey & Roads monitoring\\ 
+    \hline
+    \cite{positions2}  & Experts in the target city & Porto, Portugal & City livinglab \\ 
+    \hline
+    \cite{positioning3} & Simplified geographical area & New York, USA & Generic sensing \\ 
+    \hline
+    \cite{twitterGeospatialSensors} & Social media & New York, USA & Sensors calibration \\ 
+    \hline
+    \cite{positioning4} & Group of existing buildings & Santiago, Chile & Monitoring of particulate matter \\ 
+    \hline
+    \cite{positioning5} &  OpenStreetMap & Seoul, South Korea & Air quality monitoring \\ 
+  \end{tabular}
+  }
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section {Fundamental concepts and mathematical model}
-\label{S:3}
+\section {Fundamental concepts and mathematical model}\label{S:3}
 
 The positioning of emergencies detection units in a target city will be guided by the presence of response centres, taking as reference their geospatial metadata and existing urban infrastructure. The response centres will be considered when defining mitigation zones, which is a proposed concept to mathematically support the positioning of any number of EDUs in any urban area. 
 
 This article defines processing steps to be followed, both for the required mathematical modelling and for the positioning algorithms, as depicted in Figure \ref{Fig:figFluxograma}. The processing steps are presented along with the associated data sources and formats, highlighting the complete processing cycle of the proposed approach. The steps 1, 2 and 3 are described in this section.
 
 \begin{figure}[htb!]
-    \centering
-    \includegraphics[width=0.85 \linewidth]{Chapters/2-EDUs/images/flowchart.drawio.pdf}
-    \caption{The processing flow and data interactions in the proposed EDUs positioning approach.}
-    \label{Fig:figFluxograma}
+  \centering
+  \includegraphics[width=0.85 \linewidth]{Chapters/2-EDUs/images/flowchart.drawio.pdf}
+  \caption{The processing flow and data interactions in the proposed EDUs positioning approach.}\label{Fig:figFluxograma}
 \end{figure}
 
 
@@ -127,7 +121,7 @@ Hence, there will be $P$ points of interest, regardless of their types (e.g. hos
 Whatever is the defined list of points of interest, a PoI $p_j \in P$ will be associated to a weight function $f(p_j)$ to indicate how relevant is that infrastructure in a city (e.g. large hospitals may be more relevant than small ones), which is a subjective aspect of the proposed approach that allows some level of ``calibration'' to the particularities of a target city.
 
 %
-\subsection {Defining mitigation zones}
+\subsection{Defining mitigation zones}
 
 A Mitigation Zone (MZ) is the core element when guiding the positioning of EDUs. Overall, a city may have different numbers and configurations of MZ, depending on the considered parameters. For that, the first step when modelling mitigation zones is the definition of an Area of Influence (AoI), which is a geographical area that may sprawl beyond a city and comprise areas from different parts of a metropolitan area. Actually, since it is very common to have ``clusters'' of cities that create a continuous urban area, it is reasonable to consider a target AoI instead of a single city. 
 
@@ -140,32 +134,32 @@ The adopted approach of using configurable squares when defining the zones resul
 The value of $|Z|$ can be computed as presented in Equation \ref{eqZones}. The function $dist(pointA, pointB)$ computes the distance between the provided points using the Haversine formula, which returns more accurate distances when GPS coordinates are adopted. 
 
 \begin{equation}
-    \begin{split}
-        \displaystyle Z_w &= \left\lfloor \frac{dist(A_x,B_x)}{l} \right\rfloor\\
-        \displaystyle Z_h &= \left\lfloor \frac{dist(A_y,B_y)}{l} \right\rfloor\\
-        \displaystyle \lvert Z \rvert &= Z_w \cdot Z_h\\
-    \end{split}	
-    \label{eqZones}
+  \begin{split}
+    \displaystyle Z_w &= \left\lfloor \frac{dist(A_x,B_x)}{l} \right\rfloor\\
+    \displaystyle Z_h &= \left\lfloor \frac{dist(A_y,B_y)}{l} \right\rfloor\\
+    \displaystyle \lvert Z \rvert &= Z_w \cdot Z_h\\
+  \end{split}	
+  \label{eqZones}
 \end{equation}
 
 Equation \ref{eqZonesPoints} defines the computing of the coordinates of any mitigation zone $z_i$, assuming \textit{mod} as the modulus of an integer division, and $i$ as an index within the $Z$ set.
 
 \begin{equation}
-    \begin{split}
-        \displaystyle x(z_i) &= A_x + l \cdot (i\ mod\ Z_w)\\
-        \displaystyle y(z_i) &= A_y + l \cdot \left(\left\lfloor \frac{i}{Z_w} \right\rfloor\right)\\
-    \end{split}	
-    \label{eqZonesPoints}
+  \begin{split}
+    \displaystyle x(z_i) &= A_x + l \cdot (i\ mod\ Z_w)\\
+    \displaystyle y(z_i) &= A_y + l \cdot \left(\left\lfloor \frac{i}{Z_w} \right\rfloor\right)\\
+  \end{split}	
+  \label{eqZonesPoints}
 \end{equation}
 
 Then, the centre point of the zones can be computed, defined as the $(x_c(z_i),y_c(z_i))$ coordinates, as presented in Equation \ref{eq1}. These coordinates are required when computing the mitigation levels of the zones.
 
 \begin{equation}
-    \begin{split}
-        \displaystyle x_c(z_i) &= x(z_i) + \frac{l}{2}\\
-        \displaystyle y_c(z_i) &= y(z_i) + \frac{l}{2}\\
-    \end{split}	
-    \label{eq1}
+  \begin{split}
+    \displaystyle x_c(z_i) &= x(z_i) + \frac{l}{2}\\
+    \displaystyle y_c(z_i) &= y(z_i) + \frac{l}{2}\\
+  \end{split}	
+  \label{eq1}
 \end{equation}
 
 At this point, the mitigation zones of an AoI are correctly modelled and ready to be processed. However, it is reasonable to incorporate the particularities of the modelled urban area, even though an AoI is mathematically defined as a rectangle. For example, the AoI rectangle may cover parts of a river or the sea that may not be regarded as areas for the deployment of EDUs. This way, mitigation zones may be removed from the set $Z$ during an additional processing step, using the limits of a city (or other parameter) as reference, although the set of considered rescue centres is not changed in this case. Actually, the OpenStreetMap allows the indication of the contours of any city, facilitating this process. Whatever the case, we expect that this additional processing step would not compromise the expected results of the proposed approach as a whole.
@@ -173,14 +167,13 @@ At this point, the mitigation zones of an AoI are correctly modelled and ready t
 Figure ~\ref{Fig:figGrid} graphically presents the definition of mitigation zones.
 
 \begin{figure}[htb!]
-    \centering
-    \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZones.pdf}
-    \caption{An example with 160 mitigation zones defined for an area of influence.}
-    \label{Fig:figGrid}
+  \centering
+  \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZones.pdf}
+  \caption{An example with 160 mitigation zones defined for an area of influence.}\label{Fig:figGrid}
 \end{figure}
 
 %
-\subsection {Computing the mitigation levels}
+\subsection{Computing the mitigation levels}
 
 Each mitigation zone will be tagged with a mitigation level, a numerical index within a previously defined range. The computation of the mitigation level of a zone ($ML(z_i)$) will happen after the definition of the list of PoIs and mitigation zones, being the last step before the positioning of the EDUs. 
 
@@ -191,15 +184,15 @@ Therefore, the higher the likeability of a region (and people) to recover from a
 Initially, it is performed the summing up of the squared distances from each zone to every PoI $p_j \in P$, multiplied by its weight factor $f(p_j)$. We adopt a weight factor to define the importance level of each PoI within an urban area, since some PoI may have higher importance during mitigation actions (e.g. larger hospitals or fire departments with better equipped trucks). Equation \ref{eq:risk_level} defines the performed computation in this processing step, for $E(z)$ as the combined risk perception of zone $z$ and $dist:Z,P~\to~\mathbb{R^+}$ as the distance function from a zone to a PoI.
 
 \begin{equation}
-    \label{eq:risk_level}
-    E(z_i) = \cfrac{1}{\displaystyle\sum_{j = 1}^{\lvert P \rvert}\left(\cfrac{1}{dist^2(z_i, p_j)} \cdot f(p_j)\right)} 
+  \label{eq:risk_level}
+  E(z_i) = \cfrac{1}{\displaystyle\sum_{j = 1}^{\lvert P \rvert}\left(\cfrac{1}{dist^2(z_i, p_j)} \cdot f(p_j)\right)} 
 \end{equation}
 
 After computing the risk perceptions, the mitigation levels of each zone can be computed. This way, it is defined that $ML(z_i) \in M$, with $M$ as a set of ordered consecutive positive integers starting from $1$ until $|M|$: since the set $M$ is configurable, the value of $|M|$ will indicate how many different mitigation levels are being considered. Equation \ref{eq:risk_class} presents the computation of $ML(z_i)$, with $ML(z_i)~=~1$ as the lowest mitigation level and $ML(z_i)~=~|M|$ as the highest level. Additionally, $ML:Z \to \mathbb{N}$ is defined as the mitigation level classification function of a zone $z_i$, for $\widehat{E}$ as the normalisation of the risk perception function $E(z_i)$. 
 
 \begin{equation}
-    \label{eq:risk_class}
-    ML(z_i) = M - \min\left(M - 1, \left| \left\lceil \ln{\widehat{E}(z_i)} \right\rceil \right| \right)
+  \label{eq:risk_class}
+  ML(z_i) = M - \min\left(M - 1, \left| \left\lceil \ln{\widehat{E}(z_i)} \right\rceil \right| \right)
 \end{equation}
 
 As an important remark, the classification of each zone as being in one of the possible mitigation levels is relative to the region being considered. In other words, a zone is as risky as other zone with the same mitigation level if they belong to the same defined AoI, and thus it is meaningless to perform comparisons of zones if they are processed within different areas of influence. 
@@ -212,18 +205,16 @@ Figure \ref{Fig:figGrid2} depicts a visual example of an AoI after computation o
 %\setlength{\textfloatsep}{0pt}
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZonesColors.pdf}
-    \caption{An example of zones after computing the mitigation levels, for $|M|=3$ and 3 considered points of interest.}
-    \label{Fig:figGrid2}
+  \centering
+  \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZonesColors.pdf}
+  \caption{An example of zones after computing the mitigation levels, for $|M|=3$ and 3 considered points of interest.}\label{Fig:figGrid2}
 \end{figure}
 
 In the example in Figure \ref{Fig:figGrid2}, $|M|=3$ and a grid of $16~\times~10$ mitigation zones is defined. Since we adopt a similar pattern of common heatmaps, it is defined that $ML(z_i)~=~1$ is green, $ML(z_i)~=~2$ is yellow, and $ML(z_i)~=~3$ is red, when plotting on a map for $|M|=3$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Proposed positioning algorithms}
-\label{S:4}
+\section{Proposed positioning algorithms}\label{S:4}
 
 After the computation of the mitigation level ($ML$) of each zone within the defined AoI, the geospatial risk perception can be now mathematically computed. With this information, the step 4 of the flowchart depicted in Figure \ref{Fig:figFluxograma} can be executed. Actually, in this next step of the proposed approach, different algorithms might be applied, with different complexities and expected results. 
 
@@ -232,10 +223,10 @@ A total of four different EDUs positioning algorithms are proposed in this work.
 Whatever is the chosen strategy, the proposed algorithms do not compute the ideal number of EDUs required to cover the entire AoI. Instead, governmental entities and urban stakeholders must indicate the number of available EDUs for deployment, leaving the positioning decisions to the algorithms. This way, for the total number of EDUs defined as $U$, the number of EDUs in each zone is computed as defined in Equation \ref{eq:classes_distribution}.
 
 \begin{equation}
-    \label{eq:classes_distribution}
-    \begin{split}
-        \displaystyle n_m &= \frac{U}{\displaystyle\sum_{h = 1}^{|M|}\left(h \cdot a_h\right)} \cdot (m \cdot a_m)
-    \end{split}
+  \label{eq:classes_distribution}
+  \begin{split}
+    \displaystyle n_m &= \frac{U}{\displaystyle\sum_{h = 1}^{|M|}\left(h \cdot a_h\right)} \cdot (m \cdot a_m)
+  \end{split}
 \end{equation}
 
 Equation \ref{eq:classes_distribution} calculates the number $n_m$ of EDUs in each level $m$ in order to create a proportional distribution of sensing units, considering the total area $a_m$ of each level, prioritising zones with higher mitigation levels while restricting the total number of EDUs to $U$ units. After the computation of the number of EDUs in each mitigation level, an algorithm sets the position of every unit within the AoI. Depending on the chosen algorithm, the number of selected EDUs may vary around the value of $U$. That happens because the provided value for $U$ may not be suitable to fulfil the whole AoI according to a criteria defined by each algorithm.
@@ -247,28 +238,27 @@ Four proposed positioning algorithms are described in this section: \emph{Random
 For better detection of emergency events, the EDUs must cover the larger area possible inside the AoI. If there are enough units to be deployed in a way that every zone can be reached by at least one of them, we have a full coverage distribution, but this is not always the case. Our approach takes into consideration the fact that the EDUs are a limited resource and depending on the AoI size it will not be possible to have units enough to cover the whole area. This raises an optimisation problem, which is: given some restrictions, we must maximise the coverage area of the sensing units through a positioning schema. These considerations are stated as follows.
 
 \begin{itemize}
-    \item Restrictions:
-    \begin{enumerate}
-        \item Total number of EDUs ($U$);
-        \item Number of EDUs per mitigation level ($n_m$).
-    \end{enumerate}
-    \item Goal: to maximise the overall coverage area of the AoI by the EDUs.
+  \item Restrictions:
+  \begin{enumerate}
+    \item Total number of EDUs ($U$);
+    \item Number of EDUs per mitigation level ($n_m$).
+  \end{enumerate}
+  \item Goal: to maximise the overall coverage area of the AoI by the EDUs.
 \end{itemize}
 
 In this process, the EDUs must be distributed in an equidistant manner, spreading over the whole AoI as possible. The restrictions limit the number of EDUs in the whole AoI as also per mitigation level in order to obey the proportion distribution presented in this section. Thus, placing the EDUs in an equidistant manner will provide the best coverage solution as long as every EDU has the same sensing radius. Placing the EDUs too close to each other will create overlapping zones, reducing the coverage area. Such overlapping may happen in some situations depending on the area of the highest ML and the number of EDUs, but the equidistant positioning will always produce the scenario with less overlapping. In fact, the overlapping area of two sensing units can be obtained by calculating the area of two intersecting circumferences as shown in Equation~\ref{eq:overlapping_area}.
 
 \begin{equation}
-    I = r^2(\theta - \sin(\theta))
-    \label{eq:overlapping_area}
+  I = r^2(\theta - \sin(\theta))
+  \label{eq:overlapping_area}
 \end{equation}
 
 In order to maximise the coverage area, overlapping has to be minimised, and thus we have to minimise the value of $I$. Since $r$ is fixed, to minimise $I$ we must minimise $(\theta - \sin(\theta))$. The angle $\theta$ is the angle formed by the radius of any of the overlapping circumferences and the two intersection points as show in Figure~\ref{fig:circle_intersection}. This angle increases when the two circumferences get closer and decreases otherwise, thus, keeping the circumferences distant obviously reduces the overlapping area. Finally, placing the EDUs in an equidistant manner will avoid unnecessary overlapping and provide the maximum coverage possible, which guides the operation of the proposed algorithms.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics{Chapters/2-EDUs/images/circumferences_overlapping.pdf}
-    \caption{The angle $\theta$ formed by the radius and the two intersection points.}
-    \label{fig:circle_intersection}
+  \centering
+  \includegraphics{Chapters/2-EDUs/images/circumferences_overlapping.pdf}
+  \caption{The angle $\theta$ formed by the radius and the two intersection points.}\label{fig:circle_intersection}
 \end{figure}
 
 %%
@@ -282,16 +272,15 @@ The Random algorithm works as follows: after computing the number of EDUs per le
 
 %%% Random algorithm
 \begin{algorithm}[ht]
-    \caption{Random positioning algorithm.}
-    \label{alg:random}
-    \begin{algorithmic}
-        \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level
-        \ENSURE $pos[] \gets$ the list of zones that will get an EDU
-        \FOR{$i$ from $1$ to $M$}
-            \STATE $zones \gets random.choices(Z[i], k \gets N[i])$
-            \STATE $pos[i].append(zones)$
-        \ENDFOR
-    \end{algorithmic}
+  \caption{Random positioning algorithm.}\label{alg:random}
+  \begin{algorithmic}
+    \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level
+    \ENSURE $pos[] \gets$ the list of zones that will get an EDU
+    \FOR{$i$ from $1$ to $M$}
+      \STATE $zones \gets random.choices(Z[i], k \gets N[i])$
+      \STATE $pos[i].append(zones)$
+    \ENDFOR
+  \end{algorithmic}
 \end{algorithm}
 
 
@@ -304,31 +293,30 @@ The Balanced algorithm computes the coverage radius in each level by dividing th
 
 %%% Balanced algorithm
 \begin{algorithm}[ht!]
-    \caption{Balanced positioning algorithm.}
-    \label{alg:balanced}
-    \begin{algorithmic}
-        \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI
-        \ENSURE $pos[] \gets$ the list of zones that will get an EDU
+  \caption{Balanced positioning algorithm.}\label{alg:balanced}
+  \begin{algorithmic}
+    \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI
+    \ENSURE $pos[] \gets$ the list of zones that will get an EDU
+    \FOR{$i$ from $1$ to $M$}
+      \STATE $radius[i] \gets numpy.sqrt(Z[i] / N[i]) / 2$
+      \STATE $step[i] \gets 2 * radius[i]$
+    \ENDFOR
+    \STATE $step_x \gets 0$
+    \STATE $step_y \gets 0$
+    \FOR{$y$ from $0$ to $h$}
+      \STATE $step_y \gets step_y + 1$
+      \FOR{$x$ from $0$ to $w$}
+        \STATE $step_x \gets step_x + 1$
         \FOR{$i$ from $1$ to $M$}
-            \STATE $radius[i] \gets numpy.sqrt(Z[i] / N[i]) / 2$
-            \STATE $step[i] \gets 2 * radius[i]$
+          \IF{$step_x$ mod $step = 0$ \textbf{and} $step_y$ mod $step = 0$}
+            \STATE $pos[i].append(zone(x, y))$
+            \STATE $step_x \gets 0$
+            \STATE $step_y \gets 0$
+          \ENDIF
         \ENDFOR
-        \STATE $step_x \gets 0$
-        \STATE $step_y \gets 0$
-        \FOR{$y$ from $0$ to $h$}
-            \STATE $step_y \gets step_y + 1$
-            \FOR{$x$ from $0$ to $w$}
-                \STATE $step_x \gets step_x + 1$
-                \FOR{$i$ from $1$ to $M$}
-                    \IF{$step_x$ mod $step = 0$ \textbf{and} $step_y$ mod $step = 0$}
-                        \STATE $pos[i].append(zone(x, y))$
-                        \STATE $step_x \gets 0$
-                        \STATE $step_y \gets 0$
-                    \ENDIF
-                \ENDFOR
-            \ENDFOR
-        \ENDFOR
-    \end{algorithmic}
+      \ENDFOR
+    \ENDFOR
+  \end{algorithmic}
 \end{algorithm}
 
 This way, it is possible to determine how the units must be set apart to cover the whole area without overlapping or creating uncovered zones. After having the coverage radius, the algorithm sequentially position every EDU in an area, creating an uniform grid of multi-sensor units.
@@ -344,32 +332,31 @@ The computational cost of this algorithm is much higher than the ordinary Balanc
 
 %%% Enhanced algorithm
 \begin{algorithm}[ht!]
-    \caption{Balanced+ positioning algorithm.}
-    \label{alg:enhanced}
-    \begin{algorithmic}
-        \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI
-        \ENSURE $pos[] \gets$ the list of zones that will get an EDU
-        \FOR{$i$ from $1$ to $M$}
-            \STATE $radius[i] \gets numpy.sqrt(Z[i] / N[i]) / 2$
-        \ENDFOR
-        \STATE $smallest\_radius \gets radius[M]$
-        \STATE $highest\_radius \gets radius[1]$
-        \STATE $minumum\_dist \gets 2 * highest\_radius$
-        \STATE $x \gets 0$
-        \STATE $y \gets 0$
-        \WHILE{$y < h$}
-            \WHILE{$x < w$}
-                \IF{$dist(zone(x, y), nearest\_edu) \leq minimum\_dist$}
-                    \STATE $x \gets x + 1$
-                    \STATE break
-                \ENDIF
-                \STATE $pos[i].append(zone(x, y))$
-                \STATE $x \gets x + 2 * smallest\_radius$
-            \ENDWHILE
-            \STATE $x \gets 0$
-            \STATE $y \gets y + 1$
-        \ENDWHILE
-    \end{algorithmic}
+  \caption{Balanced+ positioning algorithm.}\label{alg:enhanced}
+  \begin{algorithmic}
+    \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI
+    \ENSURE $pos[] \gets$ the list of zones that will get an EDU
+    \FOR{$i$ from $1$ to $M$}
+      \STATE $radius[i] \gets numpy.sqrt(Z[i] / N[i]) / 2$
+    \ENDFOR
+    \STATE $smallest\_radius \gets radius[M]$
+    \STATE $highest\_radius \gets radius[1]$
+    \STATE $minumum\_dist \gets 2 * highest\_radius$
+    \STATE $x \gets 0$
+    \STATE $y \gets 0$
+    \WHILE{$y < h$}
+      \WHILE{$x < w$}
+        \IF{$dist(zone(x, y), nearest\_edu) \leq minimum\_dist$}
+          \STATE $x \gets x + 1$
+          \STATE break
+        \ENDIF
+        \STATE $pos[i].append(zone(x, y))$
+        \STATE $x \gets x + 2 * smallest\_radius$
+      \ENDWHILE
+      \STATE $x \gets 0$
+      \STATE $y \gets y + 1$
+    \ENDWHILE
+  \end{algorithmic}
 \end{algorithm}
 
 The Balanced+ algorithm works as follows: after calculating the number of EDUs per level, it performs the coverage radius computation in the same way of the Balanced algorithm. The difference between both approaches lies on the positioning step. The enhanced Balanced+ algorithm checks if there is any other unit in the proximity of each EDU, checking if it would ``fail'' the desired coverage radius distance. If there is any other unit too close to the EDU being positioned, the algorithm moves the EDU until it gets the correct distance from its neighbours. The other change in this algorithm is related to how it positions sensing units on the borders of different mitigation levels areas. Every time the algorithm begins to calculate the coordinates for the next EDU in the Balanced algorithm, it jumps forward on the AoI the number of zones equal to the coverage radius of the units in that zone. In the Balanced+ approach, it calculates the smallest radius, i.e, the coverage radius of the highest mitigation level (where units must be closer to each other) to use as parameter to get to the next spot. Combining this approach to the computation of closer neighbour units, the enhanced Balanced+ algorithm is capable of avoiding uncovered areas in the borders of the zones.
@@ -385,28 +372,27 @@ Initially, the algorithm has to receive as input the list of allowed zones. Then
 
 %% Restricted algorithm
 \begin{algorithm}[ht]
-    \caption{Restricted positioning algorithm.}
-    \label{alg:restricted}
-    \begin{algorithmic}
-        \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI, $P[] \gets$ the list of permitted zones
-        \ENSURE $pos[] \gets$ the list of zones that will get an EDU
-        \STATE $edus\_remaining \gets U$
-        \WHILE{$edus\_remaining > 0$}
-            \STATE $pos \gets balanced\_plus\_positioning(Z, M, N, w, h)$
-            \FOR{$z$ in $pos$}
-                \IF{$z \notin P$}
-                    \STATE $pos.delete(z)$
-                    \STATE $nearby\_zones \gets zones\_in\_area(z_x, z_y, 2 * z_{radius} + 1)$
-                    \FOR{$nz$ in $nearby\_zones$}
-                        \IF{$nz \in P$ \textbf{and} $nz$ has not an EDU}
-                            \STATE $pos.append(nz)$
-                            \STATE break
-                        \ENDIF
-                    \ENDFOR
-                \ENDIF
-            \ENDFOR
-        \ENDWHILE
-    \end{algorithmic}
+  \caption{Restricted positioning algorithm.}\label{alg:restricted}
+  \begin{algorithmic}
+    \REQUIRE $Z[] \gets$ the list of zones in each level, $M \gets$ number of levels, $N[] \gets$ number of EDUs needed in each level, $w, h \gets$ size of the AoI, $P[] \gets$ the list of permitted zones
+    \ENSURE $pos[] \gets$ the list of zones that will get an EDU
+    \STATE $edus\_remaining \gets U$
+    \WHILE{$edus\_remaining > 0$}
+      \STATE $pos \gets balanced\_plus\_positioning(Z, M, N, w, h)$
+      \FOR{$z$ in $pos$}
+        \IF{$z \notin P$}
+          \STATE $pos.delete(z)$
+          \STATE $nearby\_zones \gets zones\_in\_area(z_x, z_y, 2 * z_{radius} + 1)$
+          \FOR{$nz$ in $nearby\_zones$}
+            \IF{$nz \in P$ \textbf{and} $nz$ has not an EDU}
+              \STATE $pos.append(nz)$
+              \STATE break
+            \ENDIF
+          \ENDFOR
+        \ENDIF
+      \ENDFOR
+    \ENDWHILE
+  \end{algorithmic}
 \end{algorithm}
 
 The Restricted algorithm works as follows: after running the Balanced+ algorithm, the Restricted approach visits every EDU and check if it is inside a permitted zone. If this is the case, the algorithm goes to the next EDU. If not, it finds the nearest permitted zone in the range of the coverage radius of that level to move the sensing unit to that spot. If there is a sensing unit already in the selected spot, the algorithm discards the computed movement operation. This is done because if there is an unit in that area, there is no need to have another EDU in the same spot (unless availability and redundancy are concerns to be taken). Actually, since the algorithm's input is configurable, the distance between each EDU can vary according to the number of allowed zones in the AoI. 
@@ -415,8 +401,7 @@ The Restricted algorithm works as follows: after running the Balanced+ algorithm
 Finally, it is reasonable to expect that the Restricted algorithm has the highest computational cost because it runs the Balanced+ algorithm and then visit every unit to check if it is in an allowed zone, moving it when necessary. On the other hand, it produces the most realistic results to support physical deployment of the EDUs.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experiments and results}
-\label{S:5}
+\section{Experiments and results}\label{S:5}
 
 After the definition of the mathematical model and the four EDUs positioning algorithms, different experimental scenarios were created. The performed evaluation procedures were designed to demonstrate the effectiveness of the proposed approach to position a set of EDUs, as well as to evaluate the performance of the algorithms for different input parameters. In order to achieve these results, all algorithms were implemented in the Python 3 programming language, with geospatial data being processed as XML files retrieved from the OpenStreetMap. All results are presented and discussed in this section.
 
@@ -429,10 +414,9 @@ Initially, we considered the definition of an AoI for a big city with good urban
 
 %%%%%% Zonas pra Paris, M = 3, AoI um quadrado
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/eiffel_M3.png}
-    \caption{An AoI within the city of Paris, with three different mitigation levels.}
-    \label{Fig:zones_paris_0}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/eiffel_M3.png}
+  \caption{An AoI within the city of Paris, with three different mitigation levels.}\label{Fig:zones_paris_0}
 \end{figure}
 
 When plotting the computed mitigation zones, it is defined that $ML(z_i)=1$ is green, $ML(z_i)=2$ is yellow, and $ML(z_i)=3$ is red. The maps are plotted using the Google Earth Engine (GEE).
@@ -443,10 +427,9 @@ Figure \ref{Fig:zones_paris_3} presents an AoI comprising the central urban area
 
 %%%%%% Zonas pra Paris, M = 3, AoI inteiro
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/paris_M3.png}
-    \caption{A bigger AoI comprising part of Paris, with three different mitigation levels.}
-    \label{Fig:zones_paris_3}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/paris_M3.png}
+  \caption{A bigger AoI comprising part of Paris, with three different mitigation levels.}\label{Fig:zones_paris_3}
 \end{figure}
 
 It is important to remark that the definition of the AoI in this experiment started by the establishment of a rectangle that covered a large part of Paris. Then, all mitigation zones outside the defined limit (Boulevard Périphérique, a road ring) were removed, resulting in the actual AoI for processing. This particular reconfiguration was done as a pre-processing phase in step 1 of Figure \ref{Fig:figFluxograma}. In fact, this is an option that will depend on the intended modelling of a city, according to the expected level of precision (size of the zones) and processing costs. In the performed experiments, we might decide to consider the contours of the cities in order to better highlight the positioning of EDUs, but any configuration for the AoIs are possible.
@@ -455,20 +438,18 @@ It is important to remark that the definition of the AoI in this experiment star
 Still addressing the computation of mitigation zones, the city of Porto (smaller than Paris) was considered for $|M|=3$ and with a list of PoIs comprised of hospitals, police stations, fire departments, and metro stations. All PoIs are assumed to have the same weight in this experiment, in the same way of the evaluations for Paris. Figure \ref{Fig:zones_porto_3} presents the achieved result. 
 
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_no_weight.png}
-    \caption{Computed zones for the city of Porto, with three different mitigation levels.}
-    \label{Fig:zones_porto_3}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_no_weight.png}
+  \caption{Computed zones for the city of Porto, with three different mitigation levels.}\label{Fig:zones_porto_3}
 \end{figure}
 
 %%%%%%% Zonas pro Porto, M = 5
 Figure \ref{Fig:zones_porto_5} presents the same input parameters, but now defining $|M|=5$ for the same list of PoIs.
 
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M5_no_weight.png}
-    \caption{Computed zones for the city of Porto for five different mitigation levels, with dark-green representing the lowest risk while dark-red is the highest.}
-    \label{Fig:zones_porto_5}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M5_no_weight.png}
+  \caption{Computed zones for the city of Porto for five different mitigation levels, with dark-green representing the lowest risk while dark-red is the highest.}\label{Fig:zones_porto_5}
 \end{figure}
 
 It is interesting to notice that for higher values of $|M|$, the city is divided into more mitigation levels, but the practical outcome for sensors positioning may be not very different. Since we are using a natural logarithmic scale (Equation \ref{eq:risk_class}), the number of safer zones will be reduced, but the overall ``shape'' of adjacent mitigation zones will be almost the same, as we can see when comparing Figure \ref{Fig:zones_porto_3} and Figure \ref{Fig:zones_porto_5}. This way, after different tests for both Porto and Paris, with $|M|$ ranging from 2 to 10, we believe that $|M|=3$ may be a more usual configuration, defining three levels of criticality (bad, medium and good), which is very common in emergencies management systems \cite{surveyEmergencies}.
@@ -479,10 +460,9 @@ Other set of experiments was concerned with the relevance weight of the points o
 
 %%%%%% Zonas para Porto, M = 3, PoI com diferentes weights
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3.png}
-    \caption{Computed zones for the city of Porto, with $|M|=3$ and different relevance for the list of PoIs.}
-    \label{Fig:zones_porto_3_weight}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3.png}
+  \caption{Computed zones for the city of Porto, with $|M|=3$ and different relevance for the list of PoIs.}\label{Fig:zones_porto_3_weight}
 \end{figure}
 
 The weight of a PoI has the function to better set the relevance for mitigation responses in a city and thus this allows that the particularities of the selected urban area will be properly considered in the modelled scenario. Obviously, such settings will allow not only a differentiation of the types of response-related facilities, but also the configuration of a particular PoI relevance over others of the same type (e.g. when a particular hospital is bigger or better equipped than others). Doing so, the proposed approach assures a significant level of flexibility when modelling cities and emergencies management systems.
@@ -497,10 +477,9 @@ After computing the mitigation zones for different parameters, the proposed EDUs
 Figure~\ref{Fig:edus_random} presents the graphical results for the proposed Random algorithm.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_random.png}
-    \caption{Random positioning algorithm.}
-    \label{Fig:edus_random}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_random.png}
+  \caption{Random positioning algorithm.}\label{Fig:edus_random}
 \end{figure}
 
 As expected, the randomly positioned EDUs do not have any specific criteria for positioning, leading to some undercovered areas and overlapping. In that Figure, the black spots are the suggested computed positions for deployment of the available EDUs.
@@ -508,28 +487,25 @@ As expected, the randomly positioned EDUs do not have any specific criteria for 
 In order to address most problems of the Random positioning approach, the Balanced algorithm was assessed in the same scenario, as presented in Figure~\ref{Fig:edus_balanced}.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced.png}
-    \caption{Balanced positioning algorithm.}
-    \label{Fig:edus_balanced}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced.png}
+  \caption{Balanced positioning algorithm.}\label{Fig:edus_balanced}
 \end{figure}
 
 The Balanced algorithm performed better, but some EDUs were positioned very close to other units around the borders of the zones. Figure~\ref{Fig:edus_enhanced} presents the Balanced+ algorithm, which overcomes these drawbacks.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced_plus.png}
-    \caption{Balanced+ positioning algorithm.}
-    \label{Fig:edus_enhanced}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced_plus.png}
+  \caption{Balanced+ positioning algorithm.}\label{Fig:edus_enhanced}
 \end{figure}
 
 Finally, Figure~\ref{Fig:edus_restricted} presents the results for the Restricted algorithm, which we expect to have the most realistic outcome. Now, the EDUs are only positioned on allowed spots, for example avoiding that EDUs are positioned over the water as it may happen in the other algorithms.  
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_restricted.png}
-    \caption{Restricted positioning algorithm.}
-    \label{Fig:edus_restricted}
+  \centering
+  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_restricted.png}
+  \caption{Restricted positioning algorithm.}\label{Fig:edus_restricted}
 \end{figure}
 
 When comparing the different results for the Balanced+ and the Restricted algorithms, it is possible to note that the positions of the EDUs are almost the same, varying in just a few meters according to the existence of roads (more realistic spots for deployment of the units). However, such small difference achieves a more realistic result, which should be considered for actual deployment in most cases.
@@ -544,22 +520,21 @@ When applying the proposed approach, the size of the AoI, the width/height of mi
 In order to demonstrate the computational costs of the algorithms, the execution time for the experiments on an AMD Ryzen 5 4600h processor with 16 GB RAM computer was accounted. The execution time of the algorithms for both Porto ($|M|=3$ and $U=300$) and Paris ($|M|=3$ and $U=600$) are presented in Table \ref{Table:costs}.
 
 \begin{table}
-    \centering
-    \caption{Execution time in seconds for the positioning algorithms.}
-    \label{Table:costs}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Algorithm} & \textbf{Porto} & \textbf{Paris} \\
-        \hline
-        Random  &  0.124 &  0.215 \\ 
-        \hline
-        Balanced  & 5.692  &  10.974 \\ 
-        \hline
-        Balanced+  & 107.578 &  316.359  \\ 
-        \hline
-        Restricted  & 108.716  & 325.006 \\ 
-        \hline
-    \end{tabular}
+  \centering
+  \caption{Execution time in seconds for the positioning algorithms.}\label{Table:costs}
+  % \resizebox{\textwidth}{!}{
+  \begin{tabular}{c|c|c}
+    \textbf{Algorithm} & \textbf{Porto} & \textbf{Paris} \\
+    \hline
+    Random  &  0.124 &  0.215 \\ 
+    \hline
+    Balanced  & 5.692  &  10.974 \\ 
+    \hline
+    Balanced+  & 107.578 &  316.359  \\ 
+    \hline
+    Restricted  & 108.716  & 325.006 \\ 
+  \end{tabular}
+  % }
 \end{table}
 
 The execution time of the positioning algorithms will increase for more complex algorithms, but they will usually deliver better results. In fact, the execution of the positioning algorithms is not the most time-demanding part of the proposed approach, with most time being spent to compute the mitigation zones. For example, when having $|M|=3$, Porto (Figure \ref{Fig:zones_porto_3_weight}) took 998.46 seconds while Paris (Figure \ref{Fig:zones_paris_3}) needed 1341.99 seconds to compute all mitigation zones. At this point, as expected, we can conclude that the final computational cost will depend on multiple variables, although the processing time is not a critical situation in this problem scope.
@@ -567,8 +542,7 @@ The execution time of the positioning algorithms will increase for more complex 
 Finally, the employed geospatial data source could be considered as an important parameter when adopting the proposed approach, affecting the overall processing time of the algorithms. Although the proposed approach is not dependent on the OpenStreetMap database, it is assumed as the reference for processing of mitigation zones, mostly due to the fact that it is an open geospatial database that is collaboratively managed and updated. As long as it is regarded as a reliable source of data to compute mitigation zones, the time needed to pre-process a city and select all PoIs was not significant when using OSM, since such list (and related metadata) was processed in few seconds. However, when other sources of data are selected, the data acquisition time and general data reliability may be important issues that have to be properly considered.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\section{Discussions and perspectives}
-\label{S:6}
+\section{Discussions and perspectives}\label{S:6}
 
 As discussed throughout this article, the positioning of the EDUs in a city is a very important issue for emergencies detection units, which reinforces the need for flexible positioning algorithms. Overall, the detection of emergencies in smart cities is the first step when handling critical situations in urban areas, and thus the proposed approach comes as a valuable pre-deployment step in such scenario. In this article, we argue that distributed sensors will be one of the main data sources when detecting emergencies, which put their proper assembling, programming, positioning, and deployment, as major issues to be improved. At this point, while the construction of emergencies detection units have been addressed lately \cite{hardware1,hardware2}, their positioning in a city still has many challenges when emergencies detection is being performed.
 
