@@ -1,8 +1,7 @@
 % --------------------------------------------------
 % Capítulo 1: Survey
 % --------------------------------------------------
-\chapter{A Survey of Emergencies Management Systems in Smart Cities}
-\label{cap:survey}
+\chapter{A Survey of Emergencies Management Systems in Smart Cities}\label{cap:survey}
 
 \begin{refsection}
 
@@ -27,9 +26,9 @@ Emergencies can be better detected and managed with the use of electronic sensor
 Therefore, in order to make cities safer and more resilient, emergencies management systems have embraced different technologies to provide detection, alerting, and mitigation services in a city, automatizing different steps of the emergencies management cycle. However, since solutions have been developed following different approaches and premises, there is no consensus when addressing this problem, which may impair research and developments efforts in this area. Thus, a better understanding of this subject is desired. Figure \ref{Fig:general} depicts a general schema of an emergencies management system in a smart city with multiple detected emergencies, highlighting different sources of data.
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.35]{Chapters/1-Survey/images/general.pdf}
-\caption{Urban areas: a crisis-prone environment.}\label{Fig:general}
+  \centering
+  \includegraphics[scale=0.35]{Chapters/1-Survey/images/general.pdf}
+  \caption{Urban areas: a crisis-prone environment.}\label{Fig:general}
 \end{figure}
 
 The contributions of this survey are threefold. First, an emergencies management cycle is defined, classifying and organizing previous works according to their role on it. Second, the fundamentals of the area of emergencies management are established, comprising the concepts of hazards, emergencies, and alarms, which are discussed concerning their effect on the execution of the defined management cycle. Finally, previous works are surveyed and compared using as reference the provided definitions, allowing not only the understanding of the evolution of this area, but also giving clues about open challenges and research directions.
@@ -60,9 +59,9 @@ In order to perform the intended reviewing about emergencies management systems,
 It was adopted the Scopus indexing database as reference, since it contains a significant part of the most relevant works in the considered areas, indexing both international journals and conference papers. For that, we adopted the following search queries:
 
 \begin{description}
-    \item[Search 1] TITLE-ABS-KEY ( ( "emergency response"  OR  "crisis management"  OR  "crisis model*" )  AND  "smart" )  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 ) OR  LIMIT-TO ( PUBYEAR ,  2019 ) OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 )  OR  LIMIT-TO ( PUBYEAR ,  2016 ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" ) )
-    
-    \item[Search 2] TITLE-ABS-KEY ( "smart"  AND "emergency"  AND "response"  AND "management")  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 ) OR  LIMIT-TO ( PUBYEAR ,  2019 ) OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 )  OR  LIMIT-TO ( PUBYEAR ,  2016 ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" ) )
+  \item[Search 1] TITLE-ABS-KEY ( ( "emergency response"  OR  "crisis management"  OR  "crisis model*" )  AND  "smart" )  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 ) OR  LIMIT-TO ( PUBYEAR ,  2019 ) OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 )  OR  LIMIT-TO ( PUBYEAR ,  2016 ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" ) )
+  
+  \item[Search 2] TITLE-ABS-KEY ( "smart"  AND "emergency"  AND "response"  AND "management")  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 ) OR  LIMIT-TO ( PUBYEAR ,  2019 ) OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 )  OR  LIMIT-TO ( PUBYEAR ,  2016 ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" ) )
 \end{description}
 
 In order to have the current picture of the state-of-the-art in emergencies management systems, a six-years window was considered for searching, from 2016 to 2021. The intention was to retrieve the newest relevant papers associated with the keywords \textit{emergencies response}, \textit{emergencies management}, \textit{crisis management}, \textit{crisis models} and \textit{smart cities}.
@@ -72,15 +71,13 @@ Considering ``Search 1'', it returned a total of 148 papers and ``Search 2'' ret
 The workflow of the performed searches and papers selection is presented in Figure~\ref{fig:workflow}.
 
 \begin{figure}[htb]
-    \centering
-    \includegraphics{Chapters/1-Survey/images/fluxograma.pdf}
-    \caption{The adopted searching methodology for achieving the core set of works in this survey.}
-    \label{fig:workflow}
+  \centering
+  \includegraphics{Chapters/1-Survey/images/fluxograma.pdf}
+  \caption{The adopted searching methodology for achieving the core set of works in this survey.}\label{fig:workflow}
 \end{figure}
 
 %%% 3 %%%%%%%%%%%%%%%%%
-\section {The fundamentals of emergencies management systems}
-\label{sec3}
+\section {The fundamentals of emergencies management systems}\label{sec3}
 
 The basic function of emergencies management systems in a smart city is the processing of conceptual emergencies along the time in response to detected critical situations. Such emergencies will typically be associated to the causes that created them, influencing the way how emergencies will be alerted and mitigated. Particularly, it is reasonable to say that emergencies will be associated to one or more causes (hazards), as well as to a group of additional information (metadata) that will give more details to support emergencies processing.  
 
@@ -92,24 +89,22 @@ Although definitions may differ when considering the causes and the expected imp
 
 Different approaches have defined procedures to handle emergencies and their impacts in urban areas \cite{citiesemergencies1,citiesdisasters1,emergenciesmetric2,mobilityEmergencies1,kumar2017emergency}. Actually, there are many similarities among previous works that allow us to define a generic processing cycle, which can be conceived in a broader concept referred as the ``management'' of emergencies. Such emergencies management cycle would initiate when hazards are perceived as emergencies. This happens when an emergencies detection service identifies that a hazard is being manifested, and this depends on how such service is configured. The detected emergency is then ``virtually'' issued along with all required metadata that is necessary to better understand the emergency and act properly. In the sequence, a notification (alerting/warning) procedure is initiated, informing to all affected and interested elements. Finally, this information processing flow goes to the execution of mitigation actions to cease the emergencies and relieve their impacts. 
 
-Figure \ref{Fig:cycle} depicts this overall emergencies management cycle in smart cities. 
+Figure~\ref{Fig:cycle} depicts this overall emergencies management cycle in smart cities. 
 
 \begin{figure*}[htbp]
-\centering
-\includegraphics[scale=0.85]{Chapters/1-Survey/images/newcycle.pdf}
-\caption{The emergencies management cycle: a hazard is perceived as an emergency to support alerting and mitigation actions.}
-\label{Fig:cycle}
+  \centering
+  \includegraphics[scale=0.85]{Chapters/1-Survey/images/newcycle.pdf}
+  \caption{The emergencies management cycle: a hazard is perceived as an emergency to support alerting and mitigation actions.}\label{Fig:cycle}
 \end{figure*}
 
 We consider the following definitions for the elements that compose the proposed emergencies management cycle, described as follows:
 
 \begin{itemize}
-    \item \underline{Hazard}: It is the inherent source of danger in an urban environment. In other words, a hazard is a potential cause of a critical situation that may have negative consequences on a city. The hazards will have different origins and behaviors, with different occurrences depending on geographical characteristics and urbanization patterns \cite{hazard1,hazard2}. Although they are the original cause of a disaster, hazards may never happen in a city, while other cities may experience constant critical situations resulted from a single threat \cite{hazard3}. Therefore, in order to properly detect emergencies, hazards have to be continuously monitored;
-    
-    \item \underline{Emergency}: It is the key element that defines that something is wrong and that something has to be done about it. Usually, an emergency will be a conceptual element that exists within computer-based systems, being created when a hazard is perceived as a current menace and it is detected by some means \cite{socialmedia1,citiesdisasters1}. The objective of an emergency is to provide helpful information to guide the required actions to avoid harmful consequences in a city \cite{emergenciesgeneral1};
-    
-    \item \underline{Disaster}: It is the ultimate consequence of an emergency that was not tackled by an emergencies management system on time. It is expected that smart cities will treat emergencies in a way that disasters are avoided and thus this is the primary objective of emergencies management systems. However, when untreated emergencies become disasters, some specialized solutions may still be employed, and there are many works in the literature that have addressed particular problems of pre- and post-disaster scenarios \cite{citiesdisasters1,citiesdisasters2};
-
+  \item \underline{Hazard}: It is the inherent source of danger in an urban environment. In other words, a hazard is a potential cause of a critical situation that may have negative consequences on a city. The hazards will have different origins and behaviors, with different occurrences depending on geographical characteristics and urbanization patterns \cite{hazard1,hazard2}. Although they are the original cause of a disaster, hazards may never happen in a city, while other cities may experience constant critical situations resulted from a single threat \cite{hazard3}. Therefore, in order to properly detect emergencies, hazards have to be continuously monitored;
+  
+  \item \underline{Emergency}: It is the key element that defines that something is wrong and that something has to be done about it. Usually, an emergency will be a conceptual element that exists within computer-based systems, being created when a hazard is perceived as a current menace and it is detected by some means \cite{socialmedia1,citiesdisasters1}. The objective of an emergency is to provide helpful information to guide the required actions to avoid harmful consequences in a city \cite{emergenciesgeneral1};
+  
+  \item \underline{Disaster}: It is the ultimate consequence of an emergency that was not tackled by an emergencies management system on time. It is expected that smart cities will treat emergencies in a way that disasters are avoided and thus this is the primary objective of emergencies management systems. However, when untreated emergencies become disasters, some specialized solutions may still be employed, and there are many works in the literature that have addressed particular problems of pre- and post-disaster scenarios \cite{citiesdisasters1,citiesdisasters2};
 \end{itemize}
 
 This article is particularly concerned with smart city solutions to handle emergencies before a disaster happens. For that, the defined emergencies management cycle highlights three major processing steps: detection, alerting, and mitigation. All these steps will be discussed in details, as well as the conceptual definitions of emergencies in the literature, encompassing all their complexities. 
@@ -125,10 +120,9 @@ The most usual approach to model and process hazards is to monitor a particular 
 Since the nature of a hazard will dictate how an emergency will be eventually mitigated in a urban environment \cite{citiesdisasters1,hazard2,hazard4}, city-related hazards may be classified into three different groups: Environmental, Urban and Health. Environmental hazards are those resulted from natural conditions that may affect a city, such as heavy rain, hurricanes, earthquakes, volcano eruptions, among others. The other two types of hazards, Urban and Health, are both causes of human-induced disasters. We propose to subdivide them into two different groups due to the expected relevance that outbreaks surveillance and detection systems should assume in the development of smart cities \cite{covidsmartcities1,covidsmartcities2,enviroment3}. This way, Urban hazards will be related to the way we live in cities, with increasing overpopulated areas and crowded mobility systems, resulting in hazards related to traffic accidents, house firing, gas explosion, building collapsing, terrorist attacks, violent protests, robbery, etc. Finally, Health hazards will not only be associated to individual health emergencies, such as heart attacks, but collective threats due to the spread of infectious diseases. Figure \ref{Fig:hazards} presents a comprehensive organization of the expected hazards in urban areas. 
 
 \begin{figure*}[htbp]
-\centering
-\includegraphics[width=\linewidth]{Chapters/1-Survey/images/Hazards.pdf}
-\caption{The proposed classification and some common hazards in modern cities.}
-\label{Fig:hazards}
+  \centering
+  \includegraphics[width=\linewidth]{Chapters/1-Survey/images/Hazards.pdf}
+  \caption{The proposed classification and some common hazards in modern cities.}\label{Fig:hazards}
 \end{figure*}
 
 Human-induced disasters may result in infrastructural damages, injuries and deaths. Although there is not a straight line between the frequency of Urban and Health hazards and the urbanization process, the urban sprawl in this century will result in more large and mega cities around the world, with potential for higher number of disasters \cite{urbansprawl1,urbansprawl2}. In parallel, climate changes are strengthening the destructive power of natural disasters, putting additional pressure on emergencies management systems \cite{enviroment1,enviroment2}. As a result, the last decades have seen an increasing in the number of emergencies detection approaches, focusing on different types of hazards. 
@@ -139,88 +133,88 @@ Human-induced disasters may result in infrastructural damages, injuries and deat
 Emergencies are defined as a virtual entity that comprises one or more hazards and a group of metadata. Hence, for emergencies detection systems, a major issue will be to define how coupled are the emergencies concerning their associated hazards, which lead us to propose two different classifications for the definition of emergencies:
 
 \begin{itemize}
-    \item \underline{Self-contained emergencies}: Since emergencies are critical situations that may cause damages, injuries and deaths, many approaches have focused on handling them as self-contained critical elements. In such cases, an emergency is associated to a single hazard, resulting in emergencies being a result of a single cause. This way, for example, there are Earthquake Emergencies, Fire Emergencies, Flooding Emergencies and Traffic Emergencies. For some solutions targeted at a single type of emergency, such as the work in \cite{iotFire1} for fire emergencies and the work in \cite{iotRain1} for heavy rain emergencies, the proposed system is usually deployed to detect a particular type of hazard. Differently, other approaches provide some level of flexibility, allowing the detection of different hazards, but the eventual issue of an emergency is still associated with a specific type of hazard, as in \cite{emergenciesmetric4}. Whatever the case, the processing of self-contained emergencies (also referred as atomic emergencies \cite{emergenciesmetric6}) has been adopted as a simpler way to issue and handle emergencies that have the characteristics of their single associated hazards;
-    
-    \item \underline{Events-based emergencies}: For some systems, each manifested hazard will be processed as individual critical events, which will be independent indications that something critical is happening or about to happen. In this perspective, an emergency will be the conjunction of one or more events, acting then as a ``container'' of manifested hazards. For such systems, the separation between events and emergencies allow a more structured processing of critical situations, since emergencies can be defined as a composition of multiple critical events that may give more detailed clues about what is happening at a certain place and time.
+  \item \underline{Self-contained emergencies}: Since emergencies are critical situations that may cause damages, injuries and deaths, many approaches have focused on handling them as self-contained critical elements. In such cases, an emergency is associated to a single hazard, resulting in emergencies being a result of a single cause. This way, for example, there are Earthquake Emergencies, Fire Emergencies, Flooding Emergencies and Traffic Emergencies. For some solutions targeted at a single type of emergency, such as the work in \cite{iotFire1} for fire emergencies and the work in \cite{iotRain1} for heavy rain emergencies, the proposed system is usually deployed to detect a particular type of hazard. Differently, other approaches provide some level of flexibility, allowing the detection of different hazards, but the eventual issue of an emergency is still associated with a specific type of hazard, as in \cite{emergenciesmetric4}. Whatever the case, the processing of self-contained emergencies (also referred as atomic emergencies \cite{emergenciesmetric6}) has been adopted as a simpler way to issue and handle emergencies that have the characteristics of their single associated hazards;
+  
+  \item \underline{Events-based emergencies}: For some systems, each manifested hazard will be processed as individual critical events, which will be independent indications that something critical is happening or about to happen. In this perspective, an emergency will be the conjunction of one or more events, acting then as a ``container'' of manifested hazards. For such systems, the separation between events and emergencies allow a more structured processing of critical situations, since emergencies can be defined as a composition of multiple critical events that may give more detailed clues about what is happening at a certain place and time.
 \end{itemize}
 
 Since events-based emergencies may be too complex when considering all the possibilities in smart city scenarios, we also classify it into two different subgroups, defined as follows:
 
 \begin{itemize}
-    \item Triggered emergencies: It happens when thresholds are exploited to trigger the detection of an emergency. Overall, this is a simpler way to detect emergencies, since thresholds can be defined for a group of hazards monitored by sensors or other data source. In \cite{emergenciesmetric2}, an event of interest is associated to a scalar metric measured by a sensor, and each event of interest is triggered when the measured values are higher (or lower) than defined thresholds. Then, all triggered events are used to compose a single emergency. As an example, for a temperature threshold of $50^{\circ}$C, an emergency is detected when the measured temperature is higher than that reference value, but other types of hazards may also compose the same detected emergency;
-    
-    \item Aggregated emergencies: For a particular group of emergencies management systems, emergencies will be detected not by triggering and safety thresholds, but by the combined processing of multiple monitored hazards. In these cases, multiple hazards are monitored and considered for the detection of emergencies, in a combined way, creating either separate emergencies or combined macro-events emergencies, depending on the characteristics of the implemented system. For such group of emergencies, multimedia processing algorithms and artificial intelligence can be employed to combine multiple data from monitored hazards, exploiting techniques and algorithms in areas such as visual computing, audio processing, machine learning, genetic computing and fuzzy logic. The work in \cite{SultanMahmud2017} makes use of machine learning algorithms to read several sensors and generate a fire danger level instead of just monitoring thresholds. Images of the monitored area are also interpreted by machine learning algorithms to better define if there is a fire emergency or not. Another relevant scenario for such type of processing and modelling is the early detection of emergencies using machine learning, when the combined perception of the behavior of the expected hazards indicate that something may soon become wrong \cite{machine1}. Such solutions could be even exploited to support a different class of applications in the area of emergencies avoidance, as already largely adopted for traffic avoidance in Intelligent Transportation Systems (ITS) \cite{machine2}.
+  \item Triggered emergencies: It happens when thresholds are exploited to trigger the detection of an emergency. Overall, this is a simpler way to detect emergencies, since thresholds can be defined for a group of hazards monitored by sensors or other data source. In \cite{emergenciesmetric2}, an event of interest is associated to a scalar metric measured by a sensor, and each event of interest is triggered when the measured values are higher (or lower) than defined thresholds. Then, all triggered events are used to compose a single emergency. As an example, for a temperature threshold of $50^{\circ}$C, an emergency is detected when the measured temperature is higher than that reference value, but other types of hazards may also compose the same detected emergency;
+  
+  \item Aggregated emergencies: For a particular group of emergencies management systems, emergencies will be detected not by triggering and safety thresholds, but by the combined processing of multiple monitored hazards. In these cases, multiple hazards are monitored and considered for the detection of emergencies, in a combined way, creating either separate emergencies or combined macro-events emergencies, depending on the characteristics of the implemented system. For such group of emergencies, multimedia processing algorithms and artificial intelligence can be employed to combine multiple data from monitored hazards, exploiting techniques and algorithms in areas such as visual computing, audio processing, machine learning, genetic computing and fuzzy logic. The work in \cite{SultanMahmud2017} makes use of machine learning algorithms to read several sensors and generate a fire danger level instead of just monitoring thresholds. Images of the monitored area are also interpreted by machine learning algorithms to better define if there is a fire emergency or not. Another relevant scenario for such type of processing and modelling is the early detection of emergencies using machine learning, when the combined perception of the behavior of the expected hazards indicate that something may soon become wrong \cite{machine1}. Such solutions could be even exploited to support a different class of applications in the area of emergencies avoidance, as already largely adopted for traffic avoidance in Intelligent Transportation Systems (ITS) \cite{machine2}.
 \end{itemize}
 
 It is important to notice that hazards are the original causes of emergencies, thus indicating their nature. This way, for example, an emergency issued due to a temperature hazard may suggest the dispatching of fire trucks, while an emergency issued after a traffic accident may be handled by adjusting traffic lights. Therefore, understanding the possible hazards in a city is crucial when managing emergencies. 
 
-Table \ref{Tab:hazards} summarizes some works in the literature concerned with emergencies, highlighting their characteristics according to the modelling of hazards.
+Table~\ref{Tab:hazards} summarizes some works in the literature concerned with emergencies, highlighting their characteristics according to the modelling of hazards.
 
 \begin{table*}
-\centering
-\caption{Research works and the modelling of hazards and emergencies.}
-\label{Tab:hazards}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-    \multirow{2}{*}{\textbf{Work}} & \multirow{2}{*}{\textbf{Year}} & 
-    \multicolumn{3}{|c|}{\textbf{Hazards}} & \multicolumn{3}{|c|}{\textbf{Emergencies}}\\
+  \centering
+  \caption{Research works and the modelling of hazards and emergencies.}\label{Tab:hazards}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{c|c|c|c|c|c|c|c}
+    \multirow{2}{*}{\textbf{Work}} & \multirow{2}{*}{\textbf{Year}} & \multicolumn{3}{c|}{\textbf{Hazards}} & \multicolumn{3}{c}{\textbf{Emergencies}} \\
     \cline{3-8}
     & & Environ. & Urban & Health & Self-contained & Triggered & Aggregated \\ 
     
     \hline
-    \citeauthor{emergencyTraffic1} \cite{emergencyTraffic1} & 2012 &  & vehicular sensors & & X & & \\
+    \citeauthor{emergencyTraffic1} & 2012 &  & \makecell{vehicular\\sensors} & & X & & \\
     
     \hline
-    \citeauthor{detectionAudio1} \cite{detectionAudio1} & 2013 &  & audio & & X & & \\
+    \citeauthor{detectionAudio1} & 2013 &  & audio & & X & & \\
     
     \hline
-    \citeauthor{iotRain1} \cite{iotRain1} & 2016 & rain &  &  & X & & \\
+    \citeauthor{iotRain1} & 2016 & rain &  &  & X & & \\
     
     \hline
-    \citeauthor{SultanMahmud2017} \cite{SultanMahmud2017} & 2017 & fire & fire & & & & X \\
+    \citeauthor{SultanMahmud2017} & 2017 & fire & fire & & & & X \\
     
     \hline
-    \citeauthor{iotDetection2} \cite{iotDetection2} & 2017 & multiple data & multiple data & multiple data & & X & \\
+    \citeauthor{iotDetection2} & 2017 & \makecell{multiple\\data} & \makecell{multiple\\data} & \makecell{multiple\\data} & & X & \\
     
     \hline
-    \citeauthor{iotDetection1} \cite{iotDetection1} & 2018 & multiple data & multiple data & multiple data &  & X & \\
+    \citeauthor{iotDetection1} & 2018 & \makecell{multiple\\data} & \makecell{multiple\\data} & \makecell{multiple\\data} &  & X & \\
     
     \hline
-    \citeauthor{iotFlood1} \cite{iotFlood1} & 2018 & water & water & & X & & \\
+    \citeauthor{iotFlood1} & 2018 & water & water & & X & & \\
     
     \hline
-    \citeauthor{iotFire1} \cite{iotFire1} & 2018 &  & gas, smoke, temperature & & X & & \\
+    \citeauthor{iotFire1} & 2018 &  & \makecell{gas,\\smoke,\\temperature} & & X & & \\
     
     \hline
-    \citeauthor{iotPollution1} \cite{iotPollution1} & 2019 & air pollution & & & X & & \\
+    \citeauthor{iotPollution1} & 2019 & \makecell{air\\pollution} & & & X & & \\
     
     \hline
-    \citeauthor{Alkhatib2019771} \cite{Alkhatib2019771} & 2019 & & multiple data & & & & X \\
+    \citeauthor{Alkhatib2019771} & 2019 & & \makecell{multiple\\data} & & & & X \\
     
     \hline
-    \citeauthor{BRAGAGNOLO2020104240} \cite{BRAGAGNOLO2020104240} & 2020 & landslide & & & & & X \\
+    \citeauthor{BRAGAGNOLO2020104240} & 2020 & landslide & & & & & X \\
     
     \hline
-    \citeauthor{emergenciesmetric2} \cite{emergenciesmetric2} & 2020 & multiple data & multiple data &  multiple data &  & X & \\
+    \citeauthor{emergenciesmetric2} & 2020 & \makecell{multiple\\data} & \makecell{multiple\\data} &  \makecell{multiple\\data} &  & X & \\
     
     \hline
-    \citeauthor{emergenciesmetric3} \cite{emergenciesmetric3} & 2020 & multimedia data & multimedia data & multimedia data &  & X &\\
-    \hline
-    
-    \citeauthor{iotCovid1} \cite{iotCovid1} & 2020 &  & visual data &  & X & & \\
-    \hline
-    \citeauthor{iotEarthquake1} \cite{iotEarthquake1} & 2020 & earthquake &  &  & X & & \\
-    \hline
-    
-    \citeauthor{twitterDetection1} \cite{twitterDetection1} & 2020 & social media & social media &  social media &  & X & \\
+    \citeauthor{emergenciesmetric3} & 2020 & \makecell{multimedia\\data} & \makecell{multimedia\\data} & \makecell{multimedia\\data} &  & X &\\
     
     \hline
-    \citeauthor{fireBigdata1} \cite{fireBigdata1} & 2021 & fire & fire & & & & X \\
+    \citeauthor{iotCovid1} & 2020 &  & \makecell{visual\\data} &  & X & & \\
     
-\end{tabular}
+    \hline
+    \citeauthor{iotEarthquake1} & 2020 & earthquake &  &  & X & & \\
+    
+    \hline
+    \citeauthor{twitterDetection1} & 2020 & \makecell{social\\media} & \makecell{social\\media} &  \makecell{social\\media} &  & X & \\
+    
+    \hline
+    \citeauthor{fireBigdata1} & 2021 & fire & fire & & & & X \\
+  \end{tabular}
+  }
 \end{table*}
 
 %%%%%%%%%%%%
-\subsection {Associating metadata to the emergencies}
+\subsection{Associating metadata to the emergencies}
 
 When an emergency is detected within an emergencies management system, it is virtually created to be further processed. Such emergencies will be typically associated to a group of metadata, providing different types of information. Although there may be different types of metadata associated to emergencies, we identified three major groups that will be mostly considered when handling emergencies, defined as follows.
 
@@ -250,12 +244,11 @@ Emergencies will be detected at a certain position, having an influence zone and
 In general, we can expect that self-contained emergencies will rely on the magnitude of the monitored hazards, while events-based emergencies would exploit other types of information to indicate their level of criticality. Considering the proposed approaches in the literature, in different scopes, we have identified different groups of parameters to be used when computing a severity level for the emergencies, which are summarized as follows:
 
 \begin{itemize}
-    \item Hazard significance: Since emergencies will be associated to one or more hazards, it is natural to compute the severity level based on the characteristics of the hazards that compose them. However, there are different characteristics to be accounted, resulting in different ways to compute such level. For threshold-based approaches, hazards are processed as ON/OFF events and thus the severity level is only impacted by the number of triggered events that compose the considered emergency \cite{emergenciesmetric2}, or simply by the manifestation of the hazard itself \cite{emergenciesmetric4}. In such cases, a hazard is already something critical, and there is no hazard that is more critical than other hazard of the same type \cite{emergenciesmetric2}. On the other hand, the ``intensity'' of a hazard may also impact the criticality of an emergency, and two temperature hazards originated from different sensed temperatures will account differently when computing the severity level;
-    
-    \item Spatial significance: The areas of incidence and the influence zone are useful information to indicate where mitigation procedures can be taken to save lives and reduce damages. That information may be already present as metadata of emergencies and thus it seems natural to exploit them to enhance the computation of the severity level. In fact, the potential of negative impacts may be a function of the area under an emergency in a city, and different parameters may be considered for that. Actually, the inherent risk of damages in an area may be accounted based on the 1) the spatial composition and organization of the buildings and infrastructure, and 2) the population density and mobility patterns in a city. For example, an area with many wooden houses may have an innate risk \cite{firespatial1} and thus a fire emergency in such a region should be more critical for a city as a whole \cite{firespatial2}, potentially leading to the necessity of some prioritization when dispatching fire trucks to attend that emergency \cite{costa2020automatic}. In a different perspective, areas with high population density in large cities may also suffer more from the same emergency when compared to low populated areas in the suburbs \cite{firespatial3}. Since such population density may vary along the time, according to urban mobility patterns \cite{mobilityEmergencies1}, it is also reasonable to apply dynamic mechanisms to compute the severity level according to how people move within a city;
+  \item Hazard significance: Since emergencies will be associated to one or more hazards, it is natural to compute the severity level based on the characteristics of the hazards that compose them. However, there are different characteristics to be accounted, resulting in different ways to compute such level. For threshold-based approaches, hazards are processed as ON/OFF events and thus the severity level is only impacted by the number of triggered events that compose the considered emergency \cite{emergenciesmetric2}, or simply by the manifestation of the hazard itself \cite{emergenciesmetric4}. In such cases, a hazard is already something critical, and there is no hazard that is more critical than other hazard of the same type \cite{emergenciesmetric2}. On the other hand, the ``intensity'' of a hazard may also impact the criticality of an emergency, and two temperature hazards originated from different sensed temperatures will account differently when computing the severity level;
+  
+  \item Spatial significance: The areas of incidence and the influence zone are useful information to indicate where mitigation procedures can be taken to save lives and reduce damages. That information may be already present as metadata of emergencies and thus it seems natural to exploit them to enhance the computation of the severity level. In fact, the potential of negative impacts may be a function of the area under an emergency in a city, and different parameters may be considered for that. Actually, the inherent risk of damages in an area may be accounted based on the 1) the spatial composition and organization of the buildings and infrastructure, and 2) the population density and mobility patterns in a city. For example, an area with many wooden houses may have an innate risk \cite{firespatial1} and thus a fire emergency in such a region should be more critical for a city as a whole \cite{firespatial2}, potentially leading to the necessity of some prioritization when dispatching fire trucks to attend that emergency \cite{costa2020automatic}. In a different perspective, areas with high population density in large cities may also suffer more from the same emergency when compared to low populated areas in the suburbs \cite{firespatial3}. Since such population density may vary along the time, according to urban mobility patterns \cite{mobilityEmergencies1}, it is also reasonable to apply dynamic mechanisms to compute the severity level according to how people move within a city;
 
-    \item Temporal significance: The third element that might be accounted when computing the severity level is the temporal significance associated to the affected area. Actually, when an emergency is happening is very important since its negative effects may be boosted or attenuated according to movement patterns and the availability of mobility services along the days, weeks and months. In this sense, holidays and weekends may impact the emergency severity level, as well as hush hours in weekdays. In \cite{firetemporaldata1}, statistical analysis of fire concerning the time of the day, the day of the week and the month of the year are performed, associating temporal data with the impact of fire hazards. For the work in \cite{hurricanetemporal1}, multiple data are combined to estimate the impacts of hurricanes, predicting their trajectory. Then, other emergencies in a city would have higher levels of criticality if they occur during a hurricane season. In other example, crime incidents during the day, night and dawn could be used to classify emergencies \cite{crimetemporal1}, specially when related with urban hazards. In all these cases, temporal modelling would provide additional data to support the assessment of the severity level of the emergencies.
-
+  \item Temporal significance: The third element that might be accounted when computing the severity level is the temporal significance associated to the affected area. Actually, when an emergency is happening is very important since its negative effects may be boosted or attenuated according to movement patterns and the availability of mobility services along the days, weeks and months. In this sense, holidays and weekends may impact the emergency severity level, as well as hush hours in weekdays. In \cite{firetemporaldata1}, statistical analysis of fire concerning the time of the day, the day of the week and the month of the year are performed, associating temporal data with the impact of fire hazards. For the work in \cite{hurricanetemporal1}, multiple data are combined to estimate the impacts of hurricanes, predicting their trajectory. Then, other emergencies in a city would have higher levels of criticality if they occur during a hurricane season. In other example, crime incidents during the day, night and dawn could be used to classify emergencies \cite{crimetemporal1}, specially when related with urban hazards. In all these cases, temporal modelling would provide additional data to support the assessment of the severity level of the emergencies.
 \end{itemize}
 
 There are important remarks when computing the severity level of emergencies and the literature has presented interesting solutions when handling them. In general, it is reasonable to say that the monitored hazards and the expected outcomes of the employed systems will strongly dictate how severity will be computed. For the work in \cite{iotEarthquake2}, multiple sensors are used to gather information about acceleration and vibration, which is used to detect earthquakes. A warning message (emergency) emitted by that system is classified into one of three different levels, according to the detected shaking intensity. However, a different approach would be to assume that any earthquake with a magnitude higher than a certain threshold would already be a critical situation. For the work in \cite{iotEarthquake3}, a sensor network is used to detect earthquake emergencies, which are issued when a seismic peak is detected. In that case, all hazards have the same severity level. But since the hazard is an earthquake, it is already a threatening condition and thus giving a severity level to it may be pointless for some applications (a detected earthquake is already bad enough when it is higher that a ``safety'' level).
@@ -268,8 +261,7 @@ The final objective of giving an impact level to the emergencies is to support d
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% 4 %%%%%%%%%%%%%%%%%
-\section{Detecting emergencies}
-\label{sec4}
+\section{Detecting emergencies}\label{sec4}
 
 When reviewing previous works in the research area of smart emergencies management, particularly when concerning to the detection of emergencies, it is possible to sort out three major sources of data: sensors, crowdsourcing and big data. Sensors will be used to directly monitor one or more hazards, as close as possible to the affected area. Crowdsourcing will use a different paradigm, indirectly collecting data from multiple sensors, gadgets and even people to perceive a critical situation. Finally, big data approaches will usually process data from multiple sources not necessarily related to the monitored hazards, even considering data of historical occurrence of emergencies in an area. 
 
@@ -278,10 +270,9 @@ The detection of emergencies may then be performed in multiple ways and the lite
 Figure \ref{Fig:detection} depicts a generic scheme for the detection of emergencies in smart cities. 
 
 \begin{figure}[ht]
-\centering
-\includegraphics[scale=0.6]{Chapters/1-Survey/images/detection.pdf}
-\caption{Detecting emergencies through the monitoring of hazards in a city, considering different sources of data.}
-\label{Fig:detection}
+  \centering
+  \includegraphics[scale=0.6]{Chapters/1-Survey/images/detection.pdf}
+  \caption{Detecting emergencies through the monitoring of hazards in a city, considering different sources of data.}\label{Fig:detection}
 \end{figure}
 
 %%%
@@ -302,52 +293,52 @@ Table \ref{Tab:sensorsbased} summarizes previous works in the literature that em
 
 %% Table
 \begin{table*}
-\centering
-\caption{Sensors-based detection of emergencies.}
-\label{Tab:sensorsbased}
-\begin{tabular}{|c|c|c|c|c|}
+  \centering
+  \caption{Sensors-based detection of emergencies.}\label{Tab:sensorsbased}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{c|c|c|c|c}
     \textbf{Work} & \textbf{Year} & \textbf{Hazard} & \textbf{Sensors} & \textbf{Processing hardware}\\
 
     \hline
-    \citeauthor{iotRain1} \cite{iotRain1} & 2016 & rain & air pressure, temperature, humidity, wind speed, solar & Raspberry Pi 2 \\
+    \citeauthor{iotRain1} & 2016 & rain & \makecell{air pressure, temperature,\\humidity, wind speed, solar} & Raspberry Pi 2 \\
 
     \hline
-    \citeauthor{iotRain2} \cite{iotRain2} & 2016 & extreme weather & air pressure, humidity, wind speed and direction & Arduino Uno \\
+    \citeauthor{iotRain2} & 2016 & extreme weather & \makecell{air pressure, humidity,\\wind speed and direction} & Arduino Uno \\
     
     \hline
-    \citeauthor{iotFire4} \cite{iotFire4} & 2017 & fire & smoke, gas, flame & ESP 32\\
+    \citeauthor{iotFire4} & 2017 & fire & smoke, gas, flame & ESP 32\\
     
     \hline
-    \citeauthor{iotRadiation1} \cite{iotRadiation1} & 2017 & radiation & radiation & BeagleBone Black \\
+    \citeauthor{iotRadiation1} & 2017 & radiation & radiation & BeagleBone Black \\
     
     \hline
-    \citeauthor{iotFire1} \cite{iotFire1} &  2018 & fire & smoke, gas, temperature & not specified \\
+    \citeauthor{iotFire1} &  2018 & fire & smoke, gas, temperature & not specified \\
 
     \hline
-    \citeauthor{iotPollution1} \cite{iotPollution1} & 2019 & air pollution & gas & Arduino \\
+    \citeauthor{iotPollution1} & 2019 & air pollution & gas & Arduino \\
     
     \hline
-    \citeauthor{iotAudio1} \cite{iotAudio1} & 2019 & gunshots & audio & Rasbberry Pi 3 \\
+    \citeauthor{iotAudio1} & 2019 & gunshots & audio & Rasbberry Pi 3 \\
     
     \hline
-    \citeauthor{ThresholdBasedFallDetection2019} \cite{ThresholdBasedFallDetection2019} & 2019 & fall detection & accelerometer & smartphone \\
+    \citeauthor{ThresholdBasedFallDetection2019} & 2019 & fall detection & accelerometer & smartphone \\
     
     \hline
-    \citeauthor{visualdataEmergency5} \cite{visualdataEmergency5} & 2019 & violent behavior & visual sensor & Raspberry Pi 3 \\
+    \citeauthor{visualdataEmergency5} & 2019 & violent behavior & visual sensor & Raspberry Pi 3 \\
     
     \hline
-    \citeauthor{iotBike1} \cite{iotBike1} & 2021 & dangerous ambient conditions & temperature, humidty, UV radiation, pollution & Raspberry Pi Zero W \\
+    \citeauthor{iotBike1} & 2021 & \makecell{dangerous ambient\\conditions} & \makecell{temperature, humidty,\\UV radiation, pollution} & Raspberry Pi Zero W \\
     
     \hline
-    \citeauthor{iotFire3} \cite{iotFire3} & 2021 & fire & smoke, gas, temperature & ATMEGA328P\\
+    \citeauthor{iotFire3} & 2021 & fire & smoke, gas, temperature & ATMEGA328P\\
     
     \hline
-    \citeauthor{CarCrash2021} \cite{CarCrash2021} & 2021 & vehicle emergency (car crash) & motion, vibration & Raspberry Pi 3 \\
+    \citeauthor{CarCrash2021} & 2021 & \makecell{vehicle emergency\\(car crash)} & motion, vibration & Raspberry Pi 3 \\
     
     \hline
-    \citeauthor{earthquakesDetection2011} \cite{earthquakesDetection2011} & 2021 & earthquakes &  accelerometer & Cloud (Google App Engine) \\
-    
-\end{tabular}
+    \citeauthor{earthquakesDetection2011} & 2021 & earthquakes &  accelerometer & Cloud (Google App Engine) \\
+  \end{tabular}
+  }
 \end{table*}
 
 An important remark about the detection of emergencies is the level of reliability we may have concerning this entire process. And such reliability may be associated to different aspects with particular challenges. In first place, sensors may fail, compromising the quick detection of emergencies \cite{availability1,availability2}. Moreover, the network may also fail, delaying or even forbidding the delivery of emergency alerts \cite{networking1,networking2}.
@@ -365,13 +356,11 @@ Crowdsourcing will provide data in a urban scenario exploiting different technol
 Previous works in the literature have exploited three major groups of crowdsourcing approaches according to the considered source of data. Such groups are described as follows:  
 
 \begin{itemize}
-
-    \item Social media: People make millions of interactions, status updates and multimedia posts daily on different social media platforms, comprising photos, videos, and a lot of textual information \cite{socialmedia2}. Such data can be ``mined'' and processed to detect emergencies in a city, with a lot of promising applications taking advantage of the inherent characteristics of social media posts. In \cite{socialmedia3}, geotagged public tweets (textual posts on the Twitter microblogging service) are processed to detect traffic incidents in a city, continuously. For the work in \cite{twitter4}, tweets are processed to detect emergencies in a smart campus scenario. In that work, tweets are classified into four different groups: Mobility, Fire, Health and None (no event), according to the perceived patterns. Actually, processing of textual information will comprise at least the identification of keywords and language patterns \cite{twitter1}, but some particular challenges may also exist when detecting emergencies in a smart city, such as time efficiency and accuracy \cite{socialmediatime1}. Furthermore, in order to improve emergencies detection procedures, multimedia data on social media may also be processed for this purpose, but the additional processing costs should be accounted. In \cite{crowdsourcing5}, a crowdsourcing approach is adopted to share visual data describing potential emergencies, which are spontaneously provided by the inhabitants using a posting platform, supporting the detection of emergencies in a city by centralized algorithms. Similarly, the work in \cite{crowdsourcing7} also processes images to detect emergencies, but exploiting visual data on popular social media instead. Overall, the processing of social media posts may give important clues about emergencies, specially in crowded cities with many active social media users \cite{socialmedia4,twitter4};
-    
-    \item Smartphones and wearable sensors: Since smartphones became very popular in the last decades, as almost every person carries a smartphone nowadays as a multi-purpose portable tool, it is very reasonable to adopt them as a platform for crowdsourcing \cite{crowdsourcing1}. In parallel, a revolution of wearable sensors has also taken place more recently, particularly with the popularization of smartwatches and healthcare gadgets, also providing valuable collaborative data to be processed \cite{wearable1,wearable2,iotgadget1}. Modern smartphones and popular gadgets are equipped with a myriad of embedded sensors, a GPS receiver, rechargeable batteries with decent energy capacity, and networking capabilities (Wi-Fi, Bluetooth, 4G/5G). Hence, they are inherent mobile sensor units that can provide data for multiple concurrent applications, even in a transparent way for the users. In \cite{crowdsourcing4}, authors propose an emergencies detection mechanism using smartphones, along with data from the embedded accelerometer sensor and its GPS. With that data it is possible to detect if the person (user) is walking, running, falling or laying on the floor, indirectly supporting in the identification of a critical situation. Similarly, the work in \cite{crowdsourcing4} also exploits accelerometer and GPS to detect movements and emergency patterns, as well as other sensors for higher accuracy (sound and light). Actually, although smartphones and gadgets have indeed a set of embedded sensors, it is reasonable to classify them as a different type of data source due to the way the provided data will be processed, which will be strongly based on collaborative and mobile patterns. Moreover, since smartphones and wearable sensors are easily and affordable connected to the Internet, the transmission of data to be processed by central units becomes a feasible option when implementing emergencies management systems. These characteristics were considered when grouping smartphones and wearable sensors as a type of crowdsourcing data source;
-    
-    \item Vehicles and mobile units: The Internet of Things paradigm is centered on machine-to-machine communications among different types of sensors and processing units, including the ones embedded in cars, trucks, motorcycles, bikes and even UAV (Unmanned Aerial Vehicles) like drones \cite{iotsurvey,SurveyIoT}. In fact, vehicles and mobile units share similar characteristics of smartphones and wearable sensors, but with different types of applications, fitting well within the concept of crowdsourcing. Since cities are full of moving vehicles, embedded sensors can be leveraged in a collaborative way, potentially providing data that could be exploited for emergencies detection. In \cite{carpollution}, the emission of polluting gases are monitored through a smartphone connected to the cars' OBD-II interface. Such information can be used to indicate the presence of areas with high air pollution levels (a potential emergency), which is reasonable since most air pollution in cities are resulted from motor vehicles \cite{pollutioncities1}. In \cite{iotBike1}, sensors are attached to bikes to gather environmental data, which is recorded by a central processing unit before transmission to the Cloud through Wi-Fi (when bikes reach their base station). Although such connected vehicles have been mostly used to support mitigation actions after an emergency is issued \cite{mitigationDrone1,mitigationDrone2,mitigationITS1}, data provided by their embedded sensors may also support their detection.
-    
+  \item Social media: People make millions of interactions, status updates and multimedia posts daily on different social media platforms, comprising photos, videos, and a lot of textual information \cite{socialmedia2}. Such data can be ``mined'' and processed to detect emergencies in a city, with a lot of promising applications taking advantage of the inherent characteristics of social media posts. In \cite{socialmedia3}, geotagged public tweets (textual posts on the Twitter microblogging service) are processed to detect traffic incidents in a city, continuously. For the work in \cite{twitter4}, tweets are processed to detect emergencies in a smart campus scenario. In that work, tweets are classified into four different groups: Mobility, Fire, Health and None (no event), according to the perceived patterns. Actually, processing of textual information will comprise at least the identification of keywords and language patterns \cite{twitter1}, but some particular challenges may also exist when detecting emergencies in a smart city, such as time efficiency and accuracy \cite{socialmediatime1}. Furthermore, in order to improve emergencies detection procedures, multimedia data on social media may also be processed for this purpose, but the additional processing costs should be accounted. In \cite{crowdsourcing5}, a crowdsourcing approach is adopted to share visual data describing potential emergencies, which are spontaneously provided by the inhabitants using a posting platform, supporting the detection of emergencies in a city by centralized algorithms. Similarly, the work in \cite{crowdsourcing7} also processes images to detect emergencies, but exploiting visual data on popular social media instead. Overall, the processing of social media posts may give important clues about emergencies, specially in crowded cities with many active social media users \cite{socialmedia4,twitter4};
+  
+  \item Smartphones and wearable sensors: Since smartphones became very popular in the last decades, as almost every person carries a smartphone nowadays as a multi-purpose portable tool, it is very reasonable to adopt them as a platform for crowdsourcing \cite{crowdsourcing1}. In parallel, a revolution of wearable sensors has also taken place more recently, particularly with the popularization of smartwatches and healthcare gadgets, also providing valuable collaborative data to be processed \cite{wearable1,wearable2,iotgadget1}. Modern smartphones and popular gadgets are equipped with a myriad of embedded sensors, a GPS receiver, rechargeable batteries with decent energy capacity, and networking capabilities (Wi-Fi, Bluetooth, 4G/5G). Hence, they are inherent mobile sensor units that can provide data for multiple concurrent applications, even in a transparent way for the users. In \cite{crowdsourcing4}, authors propose an emergencies detection mechanism using smartphones, along with data from the embedded accelerometer sensor and its GPS. With that data it is possible to detect if the person (user) is walking, running, falling or laying on the floor, indirectly supporting in the identification of a critical situation. Similarly, the work in \cite{crowdsourcing4} also exploits accelerometer and GPS to detect movements and emergency patterns, as well as other sensors for higher accuracy (sound and light). Actually, although smartphones and gadgets have indeed a set of embedded sensors, it is reasonable to classify them as a different type of data source due to the way the provided data will be processed, which will be strongly based on collaborative and mobile patterns. Moreover, since smartphones and wearable sensors are easily and affordable connected to the Internet, the transmission of data to be processed by central units becomes a feasible option when implementing emergencies management systems. These characteristics were considered when grouping smartphones and wearable sensors as a type of crowdsourcing data source;
+  
+  \item Vehicles and mobile units: The Internet of Things paradigm is centered on machine-to-machine communications among different types of sensors and processing units, including the ones embedded in cars, trucks, motorcycles, bikes and even UAV (Unmanned Aerial Vehicles) like drones \cite{iotsurvey,SurveyIoT}. In fact, vehicles and mobile units share similar characteristics of smartphones and wearable sensors, but with different types of applications, fitting well within the concept of crowdsourcing. Since cities are full of moving vehicles, embedded sensors can be leveraged in a collaborative way, potentially providing data that could be exploited for emergencies detection. In \cite{carpollution}, the emission of polluting gases are monitored through a smartphone connected to the cars' OBD-II interface. Such information can be used to indicate the presence of areas with high air pollution levels (a potential emergency), which is reasonable since most air pollution in cities are resulted from motor vehicles \cite{pollutioncities1}. In \cite{iotBike1}, sensors are attached to bikes to gather environmental data, which is recorded by a central processing unit before transmission to the Cloud through Wi-Fi (when bikes reach their base station). Although such connected vehicles have been mostly used to support mitigation actions after an emergency is issued \cite{mitigationDrone1,mitigationDrone2,mitigationITS1}, data provided by their embedded sensors may also support their detection.
 \end{itemize}
 
 Crowdsourcing may support different types of data acquisition and processing, comprising multiple particularities of a city. In fact, it is an important asset when incorporated by emergencies management systems. For example, the work in \cite{crowdsourcing4} proposes data transmissions by a smartphone as a mean to detect a critical situation related to its user, since his/her smartphone will send periodic data to a central service at random intervals. However, if that central service detects the same anomaly from several devices in an area, it can communicate authorities about an emergency, also determining the affected area by computing GPS data. Actually, this is a combined perception of multiple users within an area, which is highly valuable when detecting emergencies.
@@ -440,88 +429,82 @@ Still considering the use of artificial intelligence, a relevant branch of machi
 Table \ref{Tab:ai} summarizes some previous works in the literature that perform some type of emergencies detection exploiting artificial intelligence, considering a variety of data sources.
 
 \begin{table*}
-\centering
-\caption{Detecting emergencies in urban areas by artificial intelligence algorithms.}
-\label{Tab:ai}
-\begin{tabular}{|c|c|c|c|c|}
+  \centering
+  \caption{Detecting emergencies in urban areas by artificial intelligence algorithms.}\label{Tab:ai}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{c|c|c|c|c}
     \textbf{Work} & \textbf{Year} & \textbf{Emergency} & \textbf{Data source} & \textbf{AI approach}\\
 
     \hline
-    \citeauthor{ExpertLeakage1} \cite{ExpertLeakage1} & 2011 & pipeline leakage & any & Expert System \\
+    \citeauthor{ExpertLeakage1} & 2011 & pipeline leakage & any & Expert System \\
     
     \hline
-    \citeauthor{AudioMachine} \cite{AudioMachine} & 2011 & security abnormal situations & sensors & Machine Learning \\
+    \citeauthor{AudioMachine} & 2011 & \makecell{security abnormal\\situations} & sensors & Machine Learning \\
     
     \hline
-    
-    \citeauthor{FuzzyWater1} \cite{FuzzyWater1} & 2012 & water pollution & big data & Expert Fuzzy System \\
-    
-    \hline
-    \citeauthor{FuzzyFire3} \cite{FuzzyFire3} & 2013 & fire in electrical systems & sensors & Expert System \\
+    \citeauthor{FuzzyWater1} & 2012 & water pollution & big data & Expert Fuzzy System \\
     
     \hline
-    \citeauthor{CNNFireVideo} \cite{CNNFireVideo} & 2016 & fire & sensors & Machine Learning (CNN) \\
+    \citeauthor{FuzzyFire3} & 2013 & \makecell{fire in electrical\\systems} & sensors & Expert System \\
     
     \hline
-    \citeauthor{SultanMahmud2017} \cite{SultanMahmud2017} & 2017 & fire & sensors & Machine Learning \\
+    \citeauthor{CNNFireVideo} & 2016 & fire & sensors & Machine Learning (CNN) \\
     
     \hline
-    \citeauthor{FuzzyFire2} \cite{FuzzyFire2} & 2017 & fire & sensors & Expert Fuzzy System \\
+    \citeauthor{SultanMahmud2017} & 2017 & fire & sensors & Machine Learning \\
     
     \hline
-    \citeauthor{MachineFacialStroke} \cite{MachineFacialStroke} & 2018 & facial stroke & sensors & Machine Learning \\
+    \citeauthor{FuzzyFire2} & 2017 & fire & sensors & Expert Fuzzy System \\
     
     \hline
-    \citeauthor{ExpertATM1} \cite{ExpertATM1} & 2019 & ATM theft & sensors & Expert System \\
+    \citeauthor{MachineFacialStroke} & 2018 & facial stroke & sensors & Machine Learning \\
     
     \hline
-    \citeauthor{Chin:2019} \cite{Chin:2019} & 2019 & earthquake & sensors & Machine Learning \\
+    \citeauthor{ExpertATM1} & 2019 & ATM theft & sensors & Expert System \\
     
     \hline
-    \citeauthor{cnn1} \cite{cnn1} & 2019 & fall & crowdsourcing & Machine Learning (CNN) \\
+    \citeauthor{Chin:2019} & 2019 & earthquake & sensors & Machine Learning \\
     
     \hline
-    \citeauthor{machine1} \cite{machine1} & 2019 & emergency in power plants & big data & Machine Learning \\
+    \citeauthor{cnn1} & 2019 & fall & crowdsourcing & Machine Learning (CNN) \\
+    
+    \hline
+    \citeauthor{machine1} & 2019 & \makecell{emergency in\\power plants} & big data & Machine Learning \\
 
     \hline
-    \citeauthor{ExpertFire2} \cite{ExpertFire2} & 2019 & fire & any & Expert Fuzzy System \\
+    \citeauthor{ExpertFire2} & 2019 & fire & any & Expert Fuzzy System \\
     
     \hline
-    \citeauthor{TinyMachineCovid} \cite{TinyMachineCovid} & 2020 & COVID-19 suspicious cases & crowdsourcing & Machine Learning (Tiny) \\
-    
-    %\hline
-    %\citeauthor{MachineVideoFall} \cite{MachineVideoFall} & \citeyear{MachineVideoFall} & fall & sensors & Machine Learning \\
+    \citeauthor{TinyMachineCovid} & 2020 & \makecell{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (Tiny) \\
     
     \hline
-    \citeauthor{machine2} \cite{machine2} & 2020 & traffic congestion and incidents & 
-    big data & Machine Learning \\
+    \citeauthor{machine2} & 2020 & \makecell{traffic congestion\\and incidents} & big data & Machine Learning \\
     
     \hline
-    \citeauthor{BRAGAGNOLO2020104240} \cite{BRAGAGNOLO2020104240} & 2020 & landslide & big data & Machine Learning \\
+    \citeauthor{BRAGAGNOLO2020104240} & 2020 & landslide & big data & Machine Learning \\
     
     \hline
-    \citeauthor{ExpertFire1} \cite{ExpertFire1} & 2020 & fire & sensors & Expert System \\
+    \citeauthor{ExpertFire1} & 2020 & fire & sensors & Expert System \\
     
     \hline
-    \citeauthor{cnn2} \cite{cnn2} & 2021 & gunshot & sensors & Machine Learning (CNN) \\
+    \citeauthor{cnn2} & 2021 & gunshot & sensors & Machine Learning (CNN) \\
     
     \hline
-    \citeauthor{MachineCovidVoice} \cite{MachineCovidVoice} & 2021 & COVID-19 suspicious cases & crowdsourcing & Machine Learning (CNN) \\
+    \citeauthor{MachineCovidVoice} & 2021 & \makecell{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (CNN) \\
     
     \hline
-    \citeauthor{MachineVehicleAccident} \cite{MachineVehicleAccident} & 2021 & vehicle accidents & sensors & Machine Learning \\
+    \citeauthor{MachineVehicleAccident} & 2021 & vehicle accidents & sensors & Machine Learning \\
     
     \hline
-    \citeauthor{TinyMachineFall} \cite{TinyMachineFall} & 2022 & fall & crowdsourcing & Machine Learning (Tiny) \\
-\end{tabular}
+    \citeauthor{TinyMachineFall} & 2022 & fall & crowdsourcing & Machine Learning (Tiny) \\
+  \end{tabular}
+  }
 \end{table*}
 
 Overall, artificial intelligence can bring significant contributions to the detection of emergencies, but AI approaches may also be valuable when complementing existing solutions. In \cite{visualdataEmergency4}, multimedia processing is performed to detect emergencies, but a CNN is employed to improve the efficiency of this process. Sensors are considered in \cite{iotEarthquake2} to detect earthquakes with the support of machine learning. The work in \cite{Alkhatib2019771} combines crowdsourcing and machine learning to identify emergencies in social media messages. By acting as human-sensors, social media users can detect many types of hazards and publish them online, while machine learning algorithms read those texts and alert about emergency situations. Still considering social media, the work in \cite{twitter3} exploits machine learning to better process tweets when detecting emergencies. Actually, although some AI solutions may increase the processing and implementation costs of the employed solutions, the achieved results may be significant, fostering the adoption of artificial intelligence in many emergencies management systems \cite{surveyAI1,surveyAI2,iaHumanCentered}.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section {Alerting and notification messages}
-\label{sec5}
+\section{Alerting and notification messages}\label{sec5}
 
 Different actions can be taken after one or more emergencies are properly detected, but usually the proposed solutions will focus on alerting or mitigation procedures, or even both \cite{architecture1,emergenciesmetric2}. In this sense, as depicted in Figure \ref{Fig:cycle}, alerting and mitigation can be perceived as independent services that can be addressed in different ways in smart cities. Therefore, for this separate perceptions of what can be done after emergencies are issued, this section will address the particularities of alerting (transmission of notification messages) during an emergency, leaving mitigation actions for the next section. 
 
@@ -534,14 +517,13 @@ Other important remark about the alerting service is the intended target. When s
 Figure \ref{Fig:notifications} presents the general schema of emergencies alerting in a smart city.
 
 \begin{figure*}[htbp]
-\centering
-\includegraphics[scale=0.75]{Chapters/1-Survey/images/notifications.pdf}
-\caption{Transmitting emergency alarms to different targets in a city.}
-\label{Fig:notifications}
+  \centering
+  \includegraphics[scale=0.75]{Chapters/1-Survey/images/notifications.pdf}
+  \caption{Transmitting emergency alarms to different targets in a city.}\label{Fig:notifications}
 \end{figure*}
 
 %%%
-\subsection {Alerting affected people}
+\subsection{Alerting affected people}
 
 Directly alerting people has been a major concern when avoiding disasters in cities even before the age of computers, with the implementation of mechanisms to warn all or part of the inhabitants about something potentially dangerous. For example, bells and sirens have been adopted as an affordable and effective way to alert many people in a considerable extensive radius \cite{socialmedia5,citiesemergencies1}. However, notifications can also provide relevant information about the type of an emergency and its intensity, as well as information to guide people to move toward a safer place \cite{emergenciesmetric2}. Additionally, when considering notification strategies, safety plans have been also employed in many localities, with people being previously trained about the procedures to be taken after being alerted about an emergency \cite{quakeculture,citiesdisasters2}. Whatever the case, alerting affected people is a major issue of emergencies management systems, with different particularities to be considered. 
 
@@ -565,19 +547,16 @@ An important element when delivering generic emergency alarms to other systems i
 Other important implementation issue when transmitting generic alarms is the employed transmission paradigm. When considering previous works concerned with emergencies notification, we identified two main transmission paradigms, which are described as follows:
 
 \begin{itemize}
-    \item Subscription: When parallel systems want to be notified about emergency alarms, a subscription procedure is taken to register the requesting application. After that, alarms will be synchronously transmitted to all subscribed systems, which will process the received alarms in any possible way. For such transmission paradigm, protocols such as MQTT fit well, as proposed in \cite{emergenciesmetric2,emergenciesmetric3}. For those works, Emergencies Alarm Clients (EAC) subscribe to a MQTT broker to receive generic alarms in real-time. MQTT can also be used to deliver a particular type of emergency alarm, as in \cite{iotFire3,iotmqtt} for fire emergencies. Actually, many solutions based on MQTT have being recently implemented due to the flexibility and easy of use of this subscribe-publish architecture, which can operate over any network protocols. In this sense, many solutions have relied on ZigBee and LoraWAN protocols to assure a wireless transmission infrastructure, with MQTT delivering the emergencies alarms \cite{iotFire3,lora2,iotmqtt2}, assuring low energy consumption and possibly ad hoc transmissions for the considered system;
-    
-    \item On demand: Some approaches will not require the previous subscription of parallel systems to receive emergency alarms. In such cases, alarms and events-related data are made available in a way that it can be asynchronously accessed. In \cite{emergenciesmetric5}, alarms are saved in a web server to be consulted. In \cite{iotgadget1}, the RESTful architecture is exploited to create web services that provide data about emergency alarms. For \cite{emergenciesxml2}, 
-    XML alarms are stored in a NoSQL database do be accessed by any requesting application. In the context of intelligent vehicle systems, the work in \cite{citiesvehicles3} broadcasts warning messages to vehicles in the area where accidents are detected. For such solutions, the nonexistence of a previous subscription process may reduce their overall complexity, although synchronous transmissions in a request-response notification paradigm may increase the time between the detection of an emergency and its proper notification.  
+  \item Subscription: When parallel systems want to be notified about emergency alarms, a subscription procedure is taken to register the requesting application. After that, alarms will be synchronously transmitted to all subscribed systems, which will process the received alarms in any possible way. For such transmission paradigm, protocols such as MQTT fit well, as proposed in \cite{emergenciesmetric2,emergenciesmetric3}. For those works, Emergencies Alarm Clients (EAC) subscribe to a MQTT broker to receive generic alarms in real-time. MQTT can also be used to deliver a particular type of emergency alarm, as in \cite{iotFire3,iotmqtt} for fire emergencies. Actually, many solutions based on MQTT have being recently implemented due to the flexibility and easy of use of this subscribe-publish architecture, which can operate over any network protocols. In this sense, many solutions have relied on ZigBee and LoraWAN protocols to assure a wireless transmission infrastructure, with MQTT delivering the emergencies alarms \cite{iotFire3,lora2,iotmqtt2}, assuring low energy consumption and possibly ad hoc transmissions for the considered system;
+  
+  \item On demand: Some approaches will not require the previous subscription of parallel systems to receive emergency alarms. In such cases, alarms and events-related data are made available in a way that it can be asynchronously accessed. In \cite{emergenciesmetric5}, alarms are saved in a web server to be consulted. In \cite{iotgadget1}, the RESTful architecture is exploited to create web services that provide data about emergency alarms. For \cite{emergenciesxml2}, XML alarms are stored in a NoSQL database do be accessed by any requesting application. In the context of intelligent vehicle systems, the work in \cite{citiesvehicles3} broadcasts warning messages to vehicles in the area where accidents are detected. For such solutions, the nonexistence of a previous subscription process may reduce their overall complexity, although synchronous transmissions in a request-response notification paradigm may increase the time between the detection of an emergency and its proper notification.
 \end{itemize}
 
 Alerting is indeed a vital service in modern emergencies management systems, which should be executed as soon as possible and reaching all affected elements in the area of an emergency. Actually, many approaches will also perform mitigation services in parallel, complementing the transmission of emergency alarms.
-`
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
-\section {Mitigating emergencies}
-\label{sec6}
+\section{Mitigating emergencies}\label{sec6}
 
 Although the alerting of people and external systems is a highly relevant objective itself, emergencies management solutions will also want to perform some actions to stop an emergency or even to reduce its negative impacts. Such actions are collectively grouped within the ``mitigation service'', which might ultimately have beneficial implications on the perceived quality of life in modern cities \cite{emergenciesmetric1,smartsensing3}.
 
@@ -588,10 +567,9 @@ Therefore, emergencies can be mitigated in multiple ways, either directly within
 Figure \ref{Fig:mitigation} presents an example of how a single emergency of fire can be mitigated in multiple different ways, either locally (triggering sprinklers and shutting down gas distribution in the area) or globally (requesting rescue teams and preparing hospitals to receive victims).
 
 \begin{figure}[ht]
-\centering
-\includegraphics[scale=0.45]{Chapters/1-Survey/images/mitigation.pdf}
-\caption{Mitigating a fire-related emergency. Mitigation services may have different objectives and areas of influence.}
-\label{Fig:mitigation}
+  \centering
+  \includegraphics[scale=0.45]{Chapters/1-Survey/images/mitigation.pdf}
+  \caption{Mitigating a fire-related emergency. Mitigation services may have different objectives and areas of influence.}\label{Fig:mitigation}
 \end{figure}
 
 When surveying mitigation approaches in the literature, it was noticed the adoption of two different strategies. The first strategy is based on direct actions on an emergency in order to cease its existence and to avoid that new emergencies are issued as a consequence of the initially detected emergency. Thus, in this strategy the target is the emergencies and how they can be handled. On the other hand, some works in the literature have been concerned with the impacts of the emergencies, relieving the negative outcomes that emergencies may have on people and properties. Both mitigation strategies have particular challenges in smart cities, being executed separately or in a parallel way, as discussed in next subsections. 
@@ -604,42 +582,40 @@ When wondering about how an emergency can be mitigated in a city, one might say 
 Many automatized mitigation services have been proposed lately, employing different hardware components according to the type of emergencies to be mitigated. Actually, some proposed approaches are centered around one or more types of emergencies, which will dictate the type of actuators that will be more effective to mitigate a particular emergency. This fact can be seen in Table~\ref{Tab:mitigation}, which summarizes some works with these characteristics. 
 
 \begin{table}
-    \centering
-    \caption{Some IoT-based approaches to directly act on emergencies in smart cities.}
-    \label{Tab:mitigation}
-    \begin{tabular}{|c|c|c|}
-        
-        \hline
-        \textbf{Work} & \textbf{Emergency} & \textbf{Actions} \\
-        
-        \hline
-        \citeauthor{mitigationAct1} \cite{mitigationAct1} & fire       & activate sprinklers \\
+  \centering
+  \caption{Some IoT-based approaches to directly act on emergencies in smart cities.}\label{Tab:mitigation}
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{c|c|c}
+    \textbf{Work} & \textbf{Emergency} & \textbf{Actions} \\
+    
+    \hline
+    \citeauthor{mitigationAct1} & fire       & activate sprinklers \\
 
-        \hline
-        \citeauthor{iotEarthquake2} \cite{iotEarthquake2} & earthquake & turn off electricity, gas and water \\
+    \hline
+    \citeauthor{iotEarthquake2} & earthquake & turn off electricity, gas and water \\
 
-        \hline
-        \citeauthor{SultanMahmud2017} \cite{SultanMahmud2017} & fire   & turn off electricity, activate sprinklers \\
+    \hline
+    \citeauthor{SultanMahmud2017} & fire   & turn off electricity, activate sprinklers \\
 
-        \hline
-        \citeauthor{iotFlood2} \cite{iotFlood2} & flood & open dam gates according to the water level \\
-        
-        \hline
-        \citeauthor{mitigationAct3} \cite{mitigationAct3} & fire       & turn off electricity, release extinguishing gases \\
+    \hline
+    \citeauthor{iotFlood2} & flood & open dam gates according to the water level \\
+    
+    \hline
+    \citeauthor{mitigationAct3} & fire       & turn off electricity, release extinguishing gases \\
 
-        \hline
-        \citeauthor{mitigationAct4} \cite{mitigationAct4} & fire       & activate a water spray \\
+    \hline
+    \citeauthor{mitigationAct4} & fire       & activate a water spray \\
 
-        \hline
-        \citeauthor{mitigationurban7} \cite{mitigationurban7} & fire       & dispatch drones do drop fire extinguishing balls \\
+    \hline
+    \citeauthor{mitigationurban7} & fire       & dispatch drones do drop fire extinguishing balls \\
 
-        \hline
-        \citeauthor{mitigationAct6} \cite{mitigationAct6} & smoke       & activate smoke extraction fans \\
+    \hline
+    \citeauthor{mitigationAct6} & smoke       & activate smoke extraction fans \\
 
-        \hline
-        \citeauthor{mitigationAct7} \cite{mitigationAct7} & flood       & control watershed gates \\
-
-    \end{tabular}
+    \hline
+    \citeauthor{mitigationAct7} & flood       & control watershed gates \\
+  \end{tabular}
+  }
 \end{table}
 
 When acting on emergencies exploiting sensors and actuators, some interesting considerations can be taken. While works like \cite{SultanMahmud2017} and \cite{mitigationAct1} are intended to cease the cause of an emergency, directly facing the original hazard, the work in \cite{iotEarthquake2} can not avoid the issued emergency, but it can prevent the issuing of new emergencies derived from the original one. The same is true when adjusting traffic lights after an accident in order to avoid additional accidents \cite{mitigationITS1,rego2018software}. In all these cases, although the outcomes may be different, the employed approach will directly act on the issued emergencies.
@@ -664,8 +640,7 @@ Relieving mitigation actions can also come from the sky. In \cite{emergencyRescu
 
 %%% 7 %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%
-\section{Open challenges and future directions}
-\label{sec7}
+\section{Open challenges and future directions}\label{sec7}
 
 The development of emergencies management systems have to deal with a lot of aspects related to the modelling of emergencies, the detection of emergencies, the transmission and displaying of warning messages, and the mitigation of emergencies in cities. These major concepts were surveyed and discussed in this article, giving important clues about important development issues and evolution trends in this complex area. However, although a comprehensive perception of the state-of-the-art in this complex subject has been provided in this article, some open challenges and future directions still need to be discussed, potentially supporting research efforts in the coming years.
 
@@ -711,20 +686,19 @@ A practical challenge for efficient emergencies management is the integration am
 The smart city systems that are already being developed may present some opportunities for the evolution of emergencies management systems. The following are some of them \cite{citiestransforming}:
 
 \begin{itemize}
-    \item Smart healthcare: data provided by hospitals are valuable for different mitigation actions, specially when informing about the number of available ICU beds and the current configurations of medical assistance teams. During an emergency, such data provided by these parallel systems could indicate the best options when injured people need immediate assistance. When concerning ambulances, their number, location and current occupation is also relevant for mitigation actions: after an emergency is detected, the emergencies management system may send a request to the the smart healthcare system for the quick dispatching of ambulances to an affected area, taking all emergencies' metadata into account;
-    
-    \item Intelligent transportation systems: the way vehicles and public transportation will behave in a city may also be integrated to the management of emergencies. In this sense, not only traffic accidents detected by the traffic system may be forwarded to an emergencies management system, but also the traffic infrastructure may be adapted to deal with an ongoing emergency in a city. Actually, some recent works have already proposed some solutions in this area, but a deeper integration between both services may improve the achieved results. In this trend, we expected that Vehicular Networks (VANET) will become more popular and ubiquitous, with a higher potential for integration with other systems.
+  \item Smart healthcare: data provided by hospitals are valuable for different mitigation actions, specially when informing about the number of available ICU beds and the current configurations of medical assistance teams. During an emergency, such data provided by these parallel systems could indicate the best options when injured people need immediate assistance. When concerning ambulances, their number, location and current occupation is also relevant for mitigation actions: after an emergency is detected, the emergencies management system may send a request to the the smart healthcare system for the quick dispatching of ambulances to an affected area, taking all emergencies' metadata into account;
+  
+  \item Intelligent transportation systems: the way vehicles and public transportation will behave in a city may also be integrated to the management of emergencies. In this sense, not only traffic accidents detected by the traffic system may be forwarded to an emergencies management system, but also the traffic infrastructure may be adapted to deal with an ongoing emergency in a city. Actually, some recent works have already proposed some solutions in this area, but a deeper integration between both services may improve the achieved results. In this trend, we expected that Vehicular Networks (VANET) will become more popular and ubiquitous, with a higher potential for integration with other systems.
 
-    \item Smart security: public security systems may also provide valuable data for the perception of emergencies, specially when considering urban hazards. Moreover, the existing infrastructure of cameras can be leveraged to enhance the detection capacity of emergencies management systems. In such integration, the monitoring resources in a city may be increased, even considering different objectives. As an additional trend, police vehicles may also be dispatched by a smart security system under request, which is in fact an important component of mitigation actions during an emergency;
-    
-    \item Smart environment monitoring: current monitoring systems that employ fixed sensors stations, drones and even remote sensing through satellites are becoming very common in many cities, providing not only a more accurate forecast but also alerting about potential dangerous weather conditions. Many of such systems already have emergencies detection capabilities, although they operate within a well-defined context. Hence, an integration could enhance the efficiency of emergencies management systems, while reducing the associated costs when already deployed sensors are concurrently used by both systems.
+  \item Smart security: public security systems may also provide valuable data for the perception of emergencies, specially when considering urban hazards. Moreover, the existing infrastructure of cameras can be leveraged to enhance the detection capacity of emergencies management systems. In such integration, the monitoring resources in a city may be increased, even considering different objectives. As an additional trend, police vehicles may also be dispatched by a smart security system under request, which is in fact an important component of mitigation actions during an emergency;
+  
+  \item Smart environment monitoring: current monitoring systems that employ fixed sensors stations, drones and even remote sensing through satellites are becoming very common in many cities, providing not only a more accurate forecast but also alerting about potential dangerous weather conditions. Many of such systems already have emergencies detection capabilities, although they operate within a well-defined context. Hence, an integration could enhance the efficiency of emergencies management systems, while reducing the associated costs when already deployed sensors are concurrently used by both systems.
 \end{itemize}
 
 These and other potential integration among two or more smart city systems will have to deal with some integration challenges, demanding common interfaces. Since integration issues are also relevant in other smart cities contexts, some works have already addressed the development of smart cities systems that comply with defined standards \cite{snap4city,validation1}. In fact, validation of future proposed systems will be always an important design issue, with methodologies, evaluation labs, and supportive tools emerging to address this matter. Overall, we believe this will be one important development trend for emergencies management systems.
 
 %%%%%%%%%%%%%%%%%
-\section{Conclusions}
-\label{conclusion}
+\section{Conclusions}\label{conclusion}
 
 For the development of more sustainable and resilient cities, emergencies should be treated as one of the main elements of the urban dynamics, potentially affecting multiple systems in a city environment. Actually, with most world population living in urban areas, with increasingly presence of large and mega cities, the negative impacts of emergencies and disasters have been more significant in the last decades. This scenario has fostered the adoption of different emergency-prone approaches in multiple contexts, but the challenges imposed by overcrowded cities will still demand more efficient solutions.
 
