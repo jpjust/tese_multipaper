@@ -1,0 +1,25 @@
+The next step to prepare a zone for hazards monitoring is to set sensors configurations for an EDU (Event Detection Unit) and its quantities to be placed. Regarding quantity, it depends on the risk level of the zone. The higher the risk level, the higher the number of EDUs that are going to be deployed compared to other zones. However, the number of units will depend on the budget available for deployment.
+
+Having the total budget for sensors deployment we then must set the configuration of each EDU. The sensing devices in an EDU will depend on the hazards that threaten the zone, thus, the sensing devices have to be capable of monitoring the parameters that are sensitive for the hazards. For example, when dealing with fire hazards the air humidity is a parameter that has a valuable importance when calculating the risk zone, thus, it is a parameter that has to be monitored. That said, the EDU for a zone that is threatened by a fire event must have an air humidity sensor. In a perfect scenario, sensing devices for every selected parameter would be installed in an EDU, but depending on the available budget, more important parameters must be prioritized, thus, discarding sensing devices for less important parameters.
+
+In order to set up an EDU, the stakeholders must check every parameter that must be sensed for every hazard that threats the zone. Having the list of parameters, they must have their importance level set as weights for our configuration algorithm. More important parameters get higher weights. For example, in a fire event, the EDU would monitor temperature and smoke. Both parameters may indicate that a fire event is about to start. Comparing the two parameters, we may argue that smoke levels are more relevant than temperature, as temperature may rise without igniting fire, but as soon as we detect smoke, we can assume that a fire has already started. Thus, in this case, the ``smoke'' parameter is more important than ``temperature'' parameters and then gets a higher weight for our algorithm, which is shown in Algorithm~\ref{alg:configuration}.
+
+\begin{algorithm}
+    \caption{EDU configuration algorithm.}
+    \label{alg:configuration}
+    \begin{algorithmic}
+        \REQUIRE $params[] \gets$ array of parameters, $n \gets$ number of EDUs, $budget \gets$ budget for the zone
+        \ENSURE $config[] \gets$ EDUs configuration, $miss[] \gets$ missing parameters
+        \STATE sort($params$) \COMMENT{sort $params$ by weight in descendant order}
+        \FORALL{$p$ in $params$}
+            \IF{$budget - n \cdot p.cost \geqslant 0$}
+                \STATE $config.append(p)$
+                \STATE $budget \gets budget - n \cdot p.cost$
+            \ELSE
+                \STATE $miss.append(p)$
+            \ENDIF
+        \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+
+In Algorithm~\ref{alg:configuration}, $p$ is a structure for the parameters, containing the sensors that the parameter requires and its costs. The algorithm will return the list of parameters that can be sensed with the given budget and number of EDUs.
