@@ -2,6 +2,7 @@
 % Capítulo 2: Posicionamento de EDUs
 % --------------------------------------------------
 \chapter{On the Positioning of Emergencies Detection Units Based on Geospatial Data of Urban Response Centres}\label{cap:posicionamento}
+\selectlanguage{english}
 
 \begin{refsection}
 
@@ -30,7 +31,7 @@ Figure~\ref{fig:smartcity} presents a conceptual representation of how mitigatio
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.7\linewidth]{Chapters/2-EDUs/images/map_layers.pdf}
+  \includegraphics[width=0.7\linewidth]{Chapters/3-EDUs/images/map_layers.pdf}
   \caption{A conceptual representation for the definition of mitigation zones in a city.}\label{fig:smartcity}
 \end{figure}
 
@@ -96,7 +97,7 @@ This article defines processing steps to be followed, both for the required math
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=0.85 \linewidth]{Chapters/2-EDUs/images/flowchart.drawio.pdf}
+  \includegraphics[width=0.85 \linewidth]{Chapters/3-EDUs/images/flowchart.drawio.pdf}
   \caption{The processing flow and data interactions in the proposed EDUs positioning approach.}\label{Fig:figFluxograma}
 \end{figure}
 
@@ -164,7 +165,7 @@ Figure ~\ref{Fig:figGrid} graphically presents the definition of mitigation zone
 
 \begin{figure}[htb!]
   \centering
-  \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZones.pdf}
+  \includegraphics[width=0.77\linewidth]{Chapters/3-EDUs/images/MitigationZones.pdf}
   \caption{An example with 160 mitigation zones defined for an area of influence.}\label{Fig:figGrid}
 \end{figure}
 
@@ -202,7 +203,7 @@ Figure~\ref{Fig:figGrid2} depicts a visual example of an AoI after computation o
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.77\linewidth]{Chapters/2-EDUs/images/MitigationZonesColors.pdf}
+  \includegraphics[width=0.77\linewidth]{Chapters/3-EDUs/images/MitigationZonesColors.pdf}
   \caption{An example of zones after computing the mitigation levels, for $|M|=3$ and 3 considered points of interest.}\label{Fig:figGrid2}
 \end{figure}
 
@@ -253,7 +254,7 @@ In order to maximise the coverage area, overlapping has to be minimised, and thu
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics{Chapters/2-EDUs/images/circumferences_overlapping.pdf}
+  \includegraphics{Chapters/3-EDUs/images/circumferences_overlapping.pdf}
   \caption{The angle $\theta$ formed by the radius and the two intersection points.}\label{fig:circle_intersection}
 \end{figure}
 
@@ -411,7 +412,7 @@ Initially, we considered the definition of an AoI for a big city with good urban
 %%%%%% Zonas pra Paris, M = 3, AoI um quadrado
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/eiffel_M3.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/eiffel_M3.png}
   \caption{An AoI within the city of Paris, with three different mitigation levels.}\label{Fig:zones_paris_0}
 \end{figure}
 
@@ -424,7 +425,7 @@ Figure~\ref{Fig:zones_paris_3} presents an AoI comprising the central urban area
 %%%%%% Zonas pra Paris, M = 3, AoI inteiro
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/paris_M3.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/paris_M3.png}
   \caption{A bigger AoI comprising part of Paris, with three different mitigation levels.}\label{Fig:zones_paris_3}
 \end{figure}
 
@@ -435,7 +436,7 @@ Still addressing the computation of mitigation zones, the city of Porto (smaller
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_no_weight.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3_no_weight.png}
   \caption{Computed zones for the city of Porto, with three different mitigation levels.}\label{Fig:zones_porto_3}
 \end{figure}
 
@@ -444,7 +445,7 @@ Figure~\ref{Fig:zones_porto_5} presents the same input parameters, but now defin
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M5_no_weight.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M5_no_weight.png}
   \caption{Computed zones for the city of Porto for five different mitigation levels, with dark-green representing the lowest risk while dark-red is the highest.}\label{Fig:zones_porto_5}
 \end{figure}
 
@@ -457,7 +458,7 @@ Other set of experiments was concerned with the relevance weight of the points o
 %%%%%% Zonas para Porto, M = 3, PoI com diferentes weights
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3.png}
   \caption{Computed zones for the city of Porto, with $|M|=3$ and different relevance for the list of PoIs.}\label{Fig:zones_porto_3_weight}
 \end{figure}
 
@@ -474,7 +475,7 @@ Figure~\ref{Fig:edus_random} presents the graphical results for the proposed Ran
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_random.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3_random.png}
   \caption{Random positioning algorithm.}\label{Fig:edus_random}
 \end{figure}
 
@@ -484,7 +485,7 @@ In order to address most problems of the Random positioning approach, the Balanc
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3_balanced.png}
   \caption{Balanced positioning algorithm.}\label{Fig:edus_balanced}
 \end{figure}
 
@@ -492,7 +493,7 @@ The Balanced algorithm performed better, but some EDUs were positioned very clos
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_balanced_plus.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3_balanced_plus.png}
   \caption{Balanced+ positioning algorithm.}\label{Fig:edus_enhanced}
 \end{figure}
 
@@ -500,7 +501,7 @@ Finally, Figure~\ref{Fig:edus_restricted} presents the results for the Restricte
 
 \begin{figure}[htbp!]
   \centering
-  \includegraphics[width=0.9\linewidth]{Chapters/2-EDUs/images/porto_M3_restricted.png}
+  \includegraphics[width=0.9\linewidth]{Chapters/3-EDUs/images/porto_M3_restricted.png}
   \caption{Restricted positioning algorithm.}\label{Fig:edus_restricted}
 \end{figure}
 
@@ -566,3 +567,4 @@ As discussed in the previous section, future works will be concerned with the ev
 \printbibliography[heading=subbibliography]
 
 \end{refsection}
+\selectlanguage{brazil}

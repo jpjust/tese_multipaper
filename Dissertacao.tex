@@ -201,9 +201,12 @@
 
 % Múltiplas referências
 \usepackage[backend=biber,style=abnt,giveninits,repeatfields,extrayear]{biblatex}
-\addbibresource{Chapters/1-Survey/references.bib}
-\addbibresource{Chapters/2-EDUs/references.bib}
-\addbibresource{Chapters/3-CityZones/references.bib}
+\addbibresource{Chapters/1-Introducao/references.bib}
+\addbibresource{Chapters/2-Survey/references.bib}
+\addbibresource{Chapters/3-EDUs/references.bib}
+\addbibresource{Chapters/4-CityZones/references.bib}
+% \addbibresource{Chapters/5-AoM/references.bib}
+\addbibresource{Chapters/6-Flood/references.bib}
 
 \usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry}
 \usepackage{ifpdf}
@@ -304,11 +307,12 @@
     % \include{Chapters/Capitulo06}
     % Caso precise de mais capítulos, basta criar novos arquivos e acrescentá-los
     % aqui seguindo o modelo acima
-    \selectlanguage{english}
-    \include{Chapters/1-Survey/texto}
-    \include{Chapters/2-EDUs/texto}
-    \include{Chapters/3-CityZones/texto}
-    \selectlanguage{portuguese}
+    \include{Chapters/1-Introducao/texto}
+    \include{Chapters/2-Survey/texto}
+    \include{Chapters/3-EDUs/texto}
+    \include{Chapters/4-CityZones/texto}
+    \include{Chapters/5-AoM/texto}
+    \include{Chapters/6-Flood/texto}
 
     %%----------------------------------------------------------------------------
     %% Inclui anexos
