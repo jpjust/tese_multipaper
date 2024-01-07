@@ -154,61 +154,30 @@ Table~\ref{Tab:hazards} summarizes some works in the literature concerned with e
   \centering
   \caption{Research works and the modelling of hazards and emergencies.}\label{Tab:hazards}
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{c|c|c|c|c|c|c|c}
-    \multirow{2}{*}{\textbf{Work}} & \multirow{2}{*}{\textbf{Year}} & \multicolumn{3}{c|}{\textbf{Hazards}} & \multicolumn{3}{c}{\textbf{Emergencies}} \\
-    \cline{3-8}
+  \begin{tabular}{llllllll}
+    \hline
+    \multirow{2}{*}{\textbf{Work}} & \multirow{2}{*}{\textbf{Year}} & \multicolumn{3}{c}{\textbf{Hazards}} & \multicolumn{3}{c}{\textbf{Emergencies}} \\
+    % \cline{3-8}
     & & Environ. & Urban & Health & Self-contained & Triggered & Aggregated \\ 
-    
     \hline
-    \citeauthor{emergencyTraffic1} & 2012 &  & \makecell{vehicular\\sensors} & & X & & \\
-    
-    \hline
+    \citeauthor{emergencyTraffic1} & 2012 &  & \makecell[l]{vehicular\\sensors} & & X & & \\
     \citeauthor{detectionAudio1} & 2013 &  & audio & & X & & \\
-    
-    \hline
     \citeauthor{iotRain1} & 2016 & rain &  &  & X & & \\
-    
-    \hline
     \citeauthor{SultanMahmud2017} & 2017 & fire & fire & & & & X \\
-    
-    \hline
-    \citeauthor{iotDetection2} & 2017 & \makecell{multiple\\data} & \makecell{multiple\\data} & \makecell{multiple\\data} & & X & \\
-    
-    \hline
-    \citeauthor{iotDetection1} & 2018 & \makecell{multiple\\data} & \makecell{multiple\\data} & \makecell{multiple\\data} &  & X & \\
-    
-    \hline
+    \citeauthor{iotDetection2} & 2017 & \makecell[l]{multiple\\data} & \makecell[l]{multiple\\data} & \makecell[l]{multiple\\data} & & X & \\
+    \citeauthor{iotDetection1} & 2018 & \makecell[l]{multiple\\data} & \makecell[l]{multiple\\data} & \makecell[l]{multiple\\data} &  & X & \\
     \citeauthor{iotFlood1} & 2018 & water & water & & X & & \\
-    
-    \hline
-    \citeauthor{iotFire1} & 2018 &  & \makecell{gas,\\smoke,\\temperature} & & X & & \\
-    
-    \hline
-    \citeauthor{iotPollution1} & 2019 & \makecell{air\\pollution} & & & X & & \\
-    
-    \hline
-    \citeauthor{Alkhatib2019771} & 2019 & & \makecell{multiple\\data} & & & & X \\
-    
-    \hline
+    \citeauthor{iotFire1} & 2018 &  & \makecell[l]{gas,\\smoke,\\temperature} & & X & & \\
+    \citeauthor{iotPollution1} & 2019 & \makecell[l]{air\\pollution} & & & X & & \\
+    \citeauthor{Alkhatib2019771} & 2019 & & \makecell[l]{multiple\\data} & & & & X \\
     \citeauthor{BRAGAGNOLO2020104240} & 2020 & landslide & & & & & X \\
-    
-    \hline
-    \citeauthor{emergenciesmetric2} & 2020 & \makecell{multiple\\data} & \makecell{multiple\\data} &  \makecell{multiple\\data} &  & X & \\
-    
-    \hline
-    \citeauthor{emergenciesmetric3} & 2020 & \makecell{multimedia\\data} & \makecell{multimedia\\data} & \makecell{multimedia\\data} &  & X &\\
-    
-    \hline
-    \citeauthor{iotCovid1} & 2020 &  & \makecell{visual\\data} &  & X & & \\
-    
-    \hline
+    \citeauthor{emergenciesmetric2} & 2020 & \makecell[l]{multiple\\data} & \makecell[l]{multiple\\data} &  \makecell[l]{multiple\\data} &  & X & \\
+    \citeauthor{emergenciesmetric3} & 2020 & \makecell[l]{multimedia\\data} & \makecell[l]{multimedia\\data} & \makecell[l]{multimedia\\data} &  & X &\\
+    \citeauthor{iotCovid1} & 2020 &  & \makecell[l]{visual\\data} &  & X & & \\
     \citeauthor{iotEarthquake1} & 2020 & earthquake &  &  & X & & \\
-    
-    \hline
-    \citeauthor{twitterDetection1} & 2020 & \makecell{social\\media} & \makecell{social\\media} &  \makecell{social\\media} &  & X & \\
-    
-    \hline
+    \citeauthor{twitterDetection1} & 2020 & \makecell[l]{social\\media} & \makecell[l]{social\\media} &  \makecell[l]{social\\media} &  & X & \\
     \citeauthor{fireBigdata1} & 2021 & fire & fire & & & & X \\
+    \hline
   \end{tabular}
   }
 \end{table*}
@@ -296,47 +265,24 @@ Table~\ref{Tab:sensorsbased} summarizes previous works in the literature that em
   \centering
   \caption{Sensors-based detection of emergencies.}\label{Tab:sensorsbased}
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{lllll}
+    \hline
     \textbf{Work} & \textbf{Year} & \textbf{Hazard} & \textbf{Sensors} & \textbf{Processing hardware}\\
-
     \hline
-    \citeauthor{iotRain1} & 2016 & rain & \makecell{air pressure, temperature,\\humidity, wind speed, solar} & Raspberry Pi 2 \\
-
-    \hline
-    \citeauthor{iotRain2} & 2016 & extreme weather & \makecell{air pressure, humidity,\\wind speed and direction} & Arduino Uno \\
-    
-    \hline
+    \citeauthor{iotRain1} & 2016 & rain & \makecell[l]{air pressure, temperature,\\humidity, wind speed, solar} & Raspberry Pi 2 \\
+    \citeauthor{iotRain2} & 2016 & extreme weather & \makecell[l]{air pressure, humidity,\\wind speed and direction} & Arduino Uno \\
     \citeauthor{iotFire4} & 2017 & fire & smoke, gas, flame & ESP 32\\
-    
-    \hline
     \citeauthor{iotRadiation1} & 2017 & radiation & radiation & BeagleBone Black \\
-    
-    \hline
     \citeauthor{iotFire1} &  2018 & fire & smoke, gas, temperature & not specified \\
-
-    \hline
     \citeauthor{iotPollution1} & 2019 & air pollution & gas & Arduino \\
-    
-    \hline
     \citeauthor{iotAudio1} & 2019 & gunshots & audio & Rasbberry Pi 3 \\
-    
-    \hline
     \citeauthor{ThresholdBasedFallDetection2019} & 2019 & fall detection & accelerometer & smartphone \\
-    
-    \hline
     \citeauthor{visualdataEmergency5} & 2019 & violent behavior & visual sensor & Raspberry Pi 3 \\
-    
-    \hline
-    \citeauthor{iotBike1} & 2021 & \makecell{dangerous ambient\\conditions} & \makecell{temperature, humidty,\\UV radiation, pollution} & Raspberry Pi Zero W \\
-    
-    \hline
+    \citeauthor{iotBike1} & 2021 & \makecell[l]{dangerous ambient\\conditions} & \makecell[l]{temperature, humidty,\\UV radiation, pollution} & Raspberry Pi Zero W \\
     \citeauthor{iotFire3} & 2021 & fire & smoke, gas, temperature & ATMEGA328P\\
-    
-    \hline
-    \citeauthor{CarCrash2021} & 2021 & \makecell{vehicle emergency\\(car crash)} & motion, vibration & Raspberry Pi 3 \\
-    
-    \hline
+    \citeauthor{CarCrash2021} & 2021 & \makecell[l]{vehicle emergency\\(car crash)} & motion, vibration & Raspberry Pi 3 \\
     \citeauthor{earthquakesDetection2011} & 2021 & earthquakes &  accelerometer & Cloud (Google App Engine) \\
+    \hline
   \end{tabular}
   }
 \end{table*}
@@ -432,71 +378,32 @@ Table~\ref{Tab:ai} summarizes some previous works in the literature that perform
   \centering
   \caption{Detecting emergencies in urban areas by artificial intelligence algorithms.}\label{Tab:ai}
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{c|c|c|c|c}
+  \begin{tabular}{lllll}
+    \hline
     \textbf{Work} & \textbf{Year} & \textbf{Emergency} & \textbf{Data source} & \textbf{AI approach}\\
-
     \hline
     \citeauthor{ExpertLeakage1} & 2011 & pipeline leakage & any & Expert System \\
-    
-    \hline
-    \citeauthor{AudioMachine} & 2011 & \makecell{security abnormal\\situations} & sensors & Machine Learning \\
-    
-    \hline
+    \citeauthor{AudioMachine} & 2011 & \makecell[l]{security abnormal\\situations} & sensors & Machine Learning \\
     \citeauthor{FuzzyWater1} & 2012 & water pollution & big data & Expert Fuzzy System \\
-    
-    \hline
-    \citeauthor{FuzzyFire3} & 2013 & \makecell{fire in electrical\\systems} & sensors & Expert System \\
-    
-    \hline
+    \citeauthor{FuzzyFire3} & 2013 & \makecell[l]{fire in electrical\\systems} & sensors & Expert System \\
     \citeauthor{CNNFireVideo} & 2016 & fire & sensors & Machine Learning (CNN) \\
-    
-    \hline
     \citeauthor{SultanMahmud2017} & 2017 & fire & sensors & Machine Learning \\
-    
-    \hline
     \citeauthor{FuzzyFire2} & 2017 & fire & sensors & Expert Fuzzy System \\
-    
-    \hline
     \citeauthor{MachineFacialStroke} & 2018 & facial stroke & sensors & Machine Learning \\
-    
-    \hline
     \citeauthor{ExpertATM1} & 2019 & ATM theft & sensors & Expert System \\
-    
-    \hline
     \citeauthor{Chin:2019} & 2019 & earthquake & sensors & Machine Learning \\
-    
-    \hline
     \citeauthor{cnn1} & 2019 & fall & crowdsourcing & Machine Learning (CNN) \\
-    
-    \hline
-    \citeauthor{machine1} & 2019 & \makecell{emergency in\\power plants} & big data & Machine Learning \\
-
-    \hline
+    \citeauthor{machine1} & 2019 & \makecell[l]{emergency in\\power plants} & big data & Machine Learning \\
     \citeauthor{ExpertFire2} & 2019 & fire & any & Expert Fuzzy System \\
-    
-    \hline
-    \citeauthor{TinyMachineCovid} & 2020 & \makecell{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (Tiny) \\
-    
-    \hline
-    \citeauthor{machine2} & 2020 & \makecell{traffic congestion\\and incidents} & big data & Machine Learning \\
-    
-    \hline
+    \citeauthor{TinyMachineCovid} & 2020 & \makecell[l]{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (Tiny) \\
+    \citeauthor{machine2} & 2020 & \makecell[l]{traffic congestion\\and incidents} & big data & Machine Learning \\
     \citeauthor{BRAGAGNOLO2020104240} & 2020 & landslide & big data & Machine Learning \\
-    
-    \hline
     \citeauthor{ExpertFire1} & 2020 & fire & sensors & Expert System \\
-    
-    \hline
     \citeauthor{cnn2} & 2021 & gunshot & sensors & Machine Learning (CNN) \\
-    
-    \hline
-    \citeauthor{MachineCovidVoice} & 2021 & \makecell{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (CNN) \\
-    
-    \hline
+    \citeauthor{MachineCovidVoice} & 2021 & \makecell[l]{COVID-19\\suspicious cases} & crowdsourcing & Machine Learning (CNN) \\
     \citeauthor{MachineVehicleAccident} & 2021 & vehicle accidents & sensors & Machine Learning \\
-    
-    \hline
     \citeauthor{TinyMachineFall} & 2022 & fall & crowdsourcing & Machine Learning (Tiny) \\
+    \hline
   \end{tabular}
   }
 \end{table*}
@@ -585,35 +492,20 @@ Many automatized mitigation services have been proposed lately, employing differ
   \centering
   \caption{Some IoT-based approaches to directly act on emergencies in smart cities.}\label{Tab:mitigation}
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{c|c|c}
+  \begin{tabular}{lll}
+    \hline
     \textbf{Work} & \textbf{Emergency} & \textbf{Actions} \\
-    
     \hline
     \citeauthor{mitigationAct1} & fire       & activate sprinklers \\
-
-    \hline
     \citeauthor{iotEarthquake2} & earthquake & turn off electricity, gas and water \\
-
-    \hline
     \citeauthor{SultanMahmud2017} & fire   & turn off electricity, activate sprinklers \\
-
-    \hline
     \citeauthor{iotFlood2} & flood & open dam gates according to the water level \\
-    
-    \hline
     \citeauthor{mitigationAct3} & fire       & turn off electricity, release extinguishing gases \\
-
-    \hline
     \citeauthor{mitigationAct4} & fire       & activate a water spray \\
-
-    \hline
     \citeauthor{mitigationurban7} & fire       & dispatch drones do drop fire extinguishing balls \\
-
-    \hline
     \citeauthor{mitigationAct6} & smoke       & activate smoke extraction fans \\
-
-    \hline
     \citeauthor{mitigationAct7} & flood       & control watershed gates \\
+    \hline
   \end{tabular}
   }
 \end{table}

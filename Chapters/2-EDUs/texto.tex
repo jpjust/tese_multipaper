@@ -70,23 +70,19 @@ Table~\ref{Table:related} summarises previous works in the literature, highlight
 
 \begin{table}
   \centering
-  \caption{Some works exploiting geospatial data to support sensors positioning and deployment.}
-  \label{Table:related}
+  \caption{Some works exploiting geospatial data to support sensors positioning and deployment.}\label{Table:related}
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{c|c|c|c}
+  \begin{tabular}{llll}
+    \hline
     \textbf{Work} & \textbf{Data source} & \textbf{City} & \textbf{Objective} \\ 
     \hline
-   ~\cite{positioning1}  &  OpenStreetMap & many, Turkey & Roads monitoring\\ 
+    \cite{positioning1}  &  OpenStreetMap & many, Turkey & Roads monitoring\\ 
+    \cite{positions2}  & Experts in the target city & Porto, Portugal & City livinglab \\ 
+    \cite{positioning3} & Simplified geographical area & New York, USA & Generic sensing \\ 
+    \cite{twitterGeospatialSensors} & Social media & New York, USA & Sensors calibration \\ 
+    \cite{positioning4} & Group of existing buildings & Santiago, Chile & Monitoring of particulate matter \\ 
+    \cite{positioning5} &  OpenStreetMap & Seoul, South Korea & Air quality monitoring \\
     \hline
-   ~\cite{positions2}  & Experts in the target city & Porto, Portugal & City livinglab \\ 
-    \hline
-   ~\cite{positioning3} & Simplified geographical area & New York, USA & Generic sensing \\ 
-    \hline
-   ~\cite{twitterGeospatialSensors} & Social media & New York, USA & Sensors calibration \\ 
-    \hline
-   ~\cite{positioning4} & Group of existing buildings & Santiago, Chile & Monitoring of particulate matter \\ 
-    \hline
-   ~\cite{positioning5} &  OpenStreetMap & Seoul, South Korea & Air quality monitoring \\ 
   \end{tabular}
   }
 \end{table}
@@ -523,16 +519,15 @@ In order to demonstrate the computational costs of the algorithms, the execution
   \centering
   \caption{Execution time in seconds for the positioning algorithms.}\label{Table:costs}
   % \resizebox{\textwidth}{!}{
-  \begin{tabular}{c|c|c}
+  \begin{tabular}{lll}
+    \hline
     \textbf{Algorithm} & \textbf{Porto} & \textbf{Paris} \\
     \hline
     Random  &  0.124 &  0.215 \\ 
-    \hline
     Balanced  & 5.692  &  10.974 \\ 
-    \hline
     Balanced+  & 107.578 &  316.359  \\ 
+    Restricted  & 108.716  & 325.006 \\
     \hline
-    Restricted  & 108.716  & 325.006 \\ 
   \end{tabular}
   % }
 \end{table}

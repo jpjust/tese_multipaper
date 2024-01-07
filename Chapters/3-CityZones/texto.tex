@@ -66,6 +66,7 @@ A task, which is a core element in the software architecture, can be represented
 
 \begin{table}[h]
   \centering
+  \caption{The parameters of a task.}\label{tab:task}
   \begin{tabular}{p{.2\linewidth}p{.7\linewidth}}
     \hline
     \textbf{Parameter} & \textbf{Description} \\
@@ -79,7 +80,6 @@ A task, which is a core element in the software architecture, can be represented
     $geojson$       & The GeoJSON defining the polygon of the AoI \\
     \hline
   \end{tabular}
-  \caption{The parameters of a task.}\label{tab:task}
 \end{table}
 
 The Application server will be composed of three modules. The first module (CityZones Manager) will handle the overall operation of the server, orchestrating the operation with the other modules. First, it will receive requests to compute risk zones ($S1$) and reply with the corresponding results when they are ready ($S9$). Moreover, the manager module will control the storage of tasks and computed maps, as well as the access to the CityZones API by the Worker module of any number of Maps-service workers. The Storage module will control the access to the database and local storage (steps $S2$ and $S8$), according to the type of data being considered. Finally, the CityZones API module provides the interface so any Maps-service worker receives tasks ($S4$) and sends back the results ($S7$) in an asynchronous way.
@@ -171,6 +171,7 @@ For the initial defined task, the settings in Table~\ref{tab:example_parameters}
 
 \begin{table}[htbp!]
   \centering
+  \caption{Parameters for the initial defined task in these examples.}\label{tab:example_parameters}
   \begin{tabular}{llp{7.3cm}}
     \hline
     \textbf{Parameter}   & \textbf{Value}      & \textbf{Description} \\
@@ -184,7 +185,6 @@ For the initial defined task, the settings in Table~\ref{tab:example_parameters}
     Algorithm            & \textit{restricted} & EDUs positioned on streets \\
     \hline
   \end{tabular}
-  \caption{Parameters for the initial defined task in these examples.}\label{tab:example_parameters}
 \end{table}
 
 After defining the settings, the first task was submitted using the proper button on the CityZones web interface. After being stored by the Application server, it was eventually retrieved by a Maps-service worker, which processed it and returned the final results when concluded. Those results was finally delivered to the Client, being presented as shown in Figure~\ref{fig:berlin_results1}, for a total of 1,199,092 computed zones and 239 PoIs. 
@@ -224,6 +224,7 @@ Since all the processing is performed in the Maps-service device, the required t
 
 \begin{table}[htbp]
   \centering
+  \caption{Performance of executed tasks, with $t_c$ as the classification time and $t_p$ as the EDUs positioning time.}\label{tab:performance}
   \begin{tabular}{p{2.3cm}llllll}
     \hline
     \textbf{Region}         & \textbf{AoI points} & \textbf{Zones} & \textbf{PoIs} & \textbf{EDUs} & \textbf{$t_c$ (s)} & \textbf{$t_p$ (s)} \\
@@ -235,7 +236,6 @@ Since all the processing is performed in the Maps-service device, the required t
     Feira de Santana, BR    & 18         & 355,556   & 19     & 1,002  & 4.059     & 34.061 \\
     \hline
   \end{tabular}
-  \caption{Performance of executed tasks, with $t_c$ as the classification time and $t_p$ as the EDUs positioning time.}\label{tab:performance}
 \end{table}
 
 Although the final processing time depends on the available hardware resources, the performance of the RiskZones module also depends on the number of zones, PoIs and points that form the AoI polygon. Moreover, regarding the performance of EDUs positioning using the restricted positioning algorithm~\cite{riskzones}, the arrangement of the allowed zones (in this case, the position and form of streets in the AoI), will also influence the time it takes to finish the processing.
