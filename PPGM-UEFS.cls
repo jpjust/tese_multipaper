@@ -461,11 +461,11 @@
 % Logo Side by side figures 
     \begin{figure}
     	\begin{minipage}[c]{0.15\linewidth}
-    		\includegraphics[width=\linewidth]{Logo_Uefs}
+    		\includegraphics[width=\linewidth]{Figures/Logo_Uefs.jpg}
     	\end{minipage}
     	\hfill
     	\begin{minipage}[c]{0.2\linewidth}
-    		\includegraphics[width=\linewidth]{logoPPGM-UEFS}
+    		\includegraphics[width=\linewidth]{Figures/logoPPGM-UEFS.png}
     	\end{minipage}%
     \end{figure} \par
 

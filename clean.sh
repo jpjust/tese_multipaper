@@ -14,5 +14,6 @@ find . -name "*.log" -exec rm -rf {} \;
 find . -name "*.lot" -exec rm -rf {} \;
 find . -name "*.loq" -exec rm -rf {} \;
 find . -name "*.run.xml" -exec rm -rf {} \;
+find . -name "*.spl" -exec rm -rf {} \;
 find . -name "*.swp" -exec rm -rf {} \;
 find . -name "*.synctex*" -exec rm -rf {} \;
