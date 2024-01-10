@@ -138,17 +138,17 @@ Once the extended distance is defined, the procedure for determining which Point
 
 % Aqui é discutir o uso do log e porque o nosso é logn
 
-In the classification of mitigation levels of the AoI, each zone will get a $ML$ that is the mitigation level class according to its distance to other PoIs within the AoI region. The goal of this classification method is to define how long it will take to initiate an \emph{in-loco} mitigation process in that zone. This way, zones that are far from response centres would take more time to have a response team at its location, in average. For that, the first step is to calculate the risk perception $E$ of each zone. The value $E$ is inversely proportional to the sum of the squared distance of the zone to every PoI within the AoI, as described in Equation~\ref{eq:risk_level}.
+In the classification of mitigation levels of the AoI, each zone will get a $ML$ that is the mitigation level class according to its distance to other PoIs within the AoI region. The goal of this classification method is to define how long it will take to initiate an \emph{in-loco} mitigation process in that zone. This way, zones that are far from response centres would take more time to have a response team at its location, in average. For that, the first step is to calculate the risk perception $E$ of each zone. The value $E$ is inversely proportional to the sum of the squared distance of the zone to every PoI within the AoI, as described in Equation~\ref{eq:risk_level_ch5}.
 
 \begin{equation}
-  \label{eq:risk_level}
+  \label{eq:risk_level_ch5}
   E(z_i) = \cfrac{1}{\displaystyle\sum_{j = 1}^{\lvert P \rvert}\left(\cfrac{1}{dist^2(z_i, p_j)} \cdot f(p_j)\right)} 
 \end{equation}
 
-The risk perception of a zone increases as it becomes more distant from the Points of Interest (PoIs). Once the risk perception of each zone is calculated, the mitigation level $ML$ is computed using the natural logarithm of the normalised value of its risk perception $E$, as shown in Equation~\ref{eq:risk_class}.
+The risk perception of a zone increases as it becomes more distant from the Points of Interest (PoIs). Once the risk perception of each zone is calculated, the mitigation level $ML$ is computed using the natural logarithm of the normalised value of its risk perception $E$, as shown in Equation~\ref{eq:risk_class_ch5}.
 
 \begin{equation}
-  \label{eq:risk_class}
+  \label{eq:risk_class_ch5}
   ML(z_i) = M - \min\left(M - 1, \left| \left\lceil \ln{\widehat{E}(z_i)} \right\rceil \right| \right)
 \end{equation}
 

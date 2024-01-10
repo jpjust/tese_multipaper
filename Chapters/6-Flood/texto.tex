@@ -38,7 +38,7 @@ To evaluate our proposal, the city of Porto, Portugal, was considered as a case 
   \caption{A satellite view of the city of Porto, Portugal.}\label{fig:porto_douro}
 \end{figure}
 
-The remainder of this article is organised in the following way. Section~\ref{sec:related_works} presents some related works in the area of flood risk assessment. The fundamentals for the intended geospatial data processing are defined in Section~\ref{sec:fundamentals}. Section~\ref{sec:proposal} presents our proposed approach based on a substantial mathematical modelling, while Section~\ref{sec:simulation} details the performed experiments and the achieved results. Then, Section~\ref{sec:applications} describes potential applications and research trends when exploiting our approach in real scenarios. Finally, conclusions and references are presented.
+The remainder of this article is organised in the following way. Section~\ref{sec:related_works} presents some related works in the area of flood risk assessment. The fundamentals for the intended geospatial data processing are defined in Section~\ref{sec:fundamentals}. Section~\ref{sec:proposal} presents our proposed approach based on a substantial mathematical modelling, while Section~\ref{sec:simulation_ch6} details the performed experiments and the achieved results. Then, Section~\ref{sec:applications} describes potential applications and research trends when exploiting our approach in real scenarios. Finally, conclusions and references are presented.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related works}\label{sec:related_works}
@@ -160,10 +160,10 @@ After the performed computations for every zone $z$, the final river-flood risk 
 
 The flood risk of each zone can also be assessed according to the existing urban emergency mitigation capability, which is accounted by the proximity to response centres (PoIs). When a flood occurs and the local authorities are notified (using phones calls, sensors, or any other means), the typical mitigation procedures begin. First responders like paramedics, firemen, and police agents will move toward the flooded area to take the needed actions. Since time is crucial to reduce victims, these agents need to arrive at their destination as soon as possible. This way, assistance will be provided earlier when affected zones are closer to the PoIs, being then an important factor to decrease the unified flood risk.
 
-Each zone will have an emergency-response risk perception ($E$) based on its distance to every PoI within the AoI. Zones closer to PoIs will have a lower risk perception value than more distant zones. Hence, the risk perception of a zone $z$, here designed by the function $E(z)$, is shown in Equation~\ref{eq:risk_level_ch5}.
+Each zone will have an emergency-response risk perception ($E$) based on its distance to every PoI within the AoI. Zones closer to PoIs will have a lower risk perception value than more distant zones. Hence, the risk perception of a zone $z$, here designed by the function $E(z)$, is shown in Equation~\ref{eq:risk_level_ch6}.
 
 \begin{equation}
-  \label{eq:risk_level_ch5}
+  \label{eq:risk_level_ch6}
   E(z) = \cfrac{1}{\displaystyle\sum_{j = 1}^{\lvert P \rvert}\left(\cfrac{1}{d^2(z, p_j)} \cdot f(p_j)\right)} 
 \end{equation}
 
@@ -208,7 +208,7 @@ Figure~\ref{fig:zones_and_pois_classified} demonstrates a visual example of the 
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experiments and achieved results}\label{sec:simulation}
+\section{Experiments and achieved results}\label{sec:simulation_ch6}
 
 Porto, a historic city situated along the banks of the Douro River in northern Portugal, was chosen as the target city for the evaluation of our proposed approach. It is the second-largest city in Portugal, renowned for its cultural heritage, vibrant atmosphere, and economic significance. However, its geographical location near the Douro River places it at risk of flood events, making it an ideal case for flood risk assessment.
 
@@ -282,7 +282,7 @@ Our proposed assessment approach could also be integrated within the context of 
 Finally, by applying our proposed approach to the city of Porto, we could leverage georeferenced data to assess and potentially enhance the city's flood resilience in the face of future challenges. As smart cities continue to evolve, managing and mitigating flood risks becomes a crucial aspect of urban planning and development. Porto's experience with the Douro River floods offers invaluable insights for not only safeguarding its future but also providing a blueprint for other urban areas facing similar challenges. We believe that the development of data-driven methodologies to assess risk levels in cities can aid authorities to better plan the growing of urban areas and the building of new response centres in order to prevent or, at least, reduce life and economic losses, reinforcing the applicability of our approach.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{sec:conclusion}
+\section{Conclusions}\label{sec:conclusion_ch6}
 
 Among the many types of emergency events that may happen in an urban area, flood is the most recurrent and the one which makes more impact in a city. In order to prepare a smart city for such events, a risk classification mechanism must be used to identify the flood prone areas and allow for better response and preparedness. In this sense, this article proposed a flood risk assessment methodology that makes use of open data as reference, making it generic and very adaptive. The performed experiments for the city of Porto, Portugal, presented some promising results.
 
