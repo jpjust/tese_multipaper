@@ -89,7 +89,7 @@ Table~\ref{Table:related} summarises previous works in the literature, highlight
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section {Fundamental concepts and mathematical model}\label{S:3}
+\section{Fundamental concepts and mathematical model}\label{S:3}
 
 The positioning of emergencies detection units in a target city will be guided by the presence of response centres, taking as reference their geospatial metadata and existing urban infrastructure. The response centres will be considered when defining mitigation zones, which is a proposed concept to mathematically support the positioning of any number of EDUs in any urban area. 
 
@@ -259,11 +259,11 @@ In order to maximise the coverage area, overlapping has to be minimised, and thu
 \end{figure}
 
 %%
-\subsection {Random algorithm}
+\subsection{Random algorithm}
 
 The first proposal for the EDUs follows a random positioning principle, according to the proportion ratio defined in Equation~\ref{eq:classes_distribution}. The idea is that any position is valid for an EDU $z_i$ as long as the mitigation levels of the zones are considered to define deployment subsets. For example, assuming that $|M|=3$, there will 3 disjoint subsets of EDUs that may be positioned anywhere within the corresponding zone, since the combination of these 3 subsets results in the initial set of available EDUs.
 
-The Random algorithm has the lowest computational cost, but it has no criteria for selecting the positions of the units. This way, it does not guarantee that every ``part'' of the AoI will be covered by an EDU. Actually, although it can be used to demonstrate the proportional distribution calculated in Equation~\ref{eq:classes_distribution}, it is reasonable to say that this algorithm is not recommended for a real scenario of nodes deployment. 
+The Random algorithm has the lowest computational cost, but it has no criteria for selecting the positions of the units. This way, it does not guarantee that every ``part'' of the AoI will be covered by an EDU.\ Actually, although it can be used to demonstrate the proportional distribution calculated in Equation~\ref{eq:classes_distribution}, it is reasonable to say that this algorithm is not recommended for a real scenario of nodes deployment. 
 
 The Random algorithm works as follows: after computing the number of EDUs per level, it randomly selects a position within the set of zones with that mitigation level for each of those EDUs. In this manner, it is possible to have several EDUs very close to each other, as well as some uncovered areas within the AoI, as defined in Algorithm~\ref{alg:random}.
 
@@ -325,7 +325,7 @@ As an important remark, although this algorithm achieves an uniform positioning,
 
 The Balanced+ algorithm improves the Balanced algorithm by guaranteeing that the units are positioned correctly even in the border zones, being an enhanced version of the later. In this approach, every time an EDU is positioned, the algorithm checks if its distance from the nearest unit obeys the coverage radius that was previously calculated. In this sense, there is no overlapping in border areas and there is no uncovered areas within the AoI.
 
-The computational cost of this algorithm is much higher than the ordinary Balanced method because of the several checks that it performs when positioning each EDU. This proposed algorithm is presented in Algorithm~\ref{alg:enhanced}.
+The computational cost of this algorithm is much higher than the ordinary Balanced method because of the several checks that it performs when positioning each EDU.\ This proposed algorithm is presented in Algorithm~\ref{alg:enhanced}.
 
 %%% Enhanced algorithm
 \begin{algorithm}[ht!]
@@ -392,7 +392,7 @@ Initially, the algorithm has to receive as input the list of allowed zones. Then
   \end{algorithmic}
 \end{algorithm}
 
-The Restricted algorithm works as follows: after running the Balanced+ algorithm, the Restricted approach visits every EDU and check if it is inside a permitted zone. If this is the case, the algorithm goes to the next EDU. If not, it finds the nearest permitted zone in the range of the coverage radius of that level to move the sensing unit to that spot. If there is a sensing unit already in the selected spot, the algorithm discards the computed movement operation. This is done because if there is an unit in that area, there is no need to have another EDU in the same spot (unless availability and redundancy are concerns to be taken). Actually, since the algorithm's input is configurable, the distance between each EDU can vary according to the number of allowed zones in the AoI. 
+The Restricted algorithm works as follows: after running the Balanced+ algorithm, the Restricted approach visits every EDU and check if it is inside a permitted zone. If this is the case, the algorithm goes to the next EDU.\ If not, it finds the nearest permitted zone in the range of the coverage radius of that level to move the sensing unit to that spot. If there is a sensing unit already in the selected spot, the algorithm discards the computed movement operation. This is done because if there is an unit in that area, there is no need to have another EDU in the same spot (unless availability and redundancy are concerns to be taken). Actually, since the algorithm's input is configurable, the distance between each EDU can vary according to the number of allowed zones in the AoI. 
 %In this sense, this algorithm can improve the deployment of the sensing units by saving unnecessary EDUs.
 
 Finally, it is reasonable to expect that the Restricted algorithm has the highest computational cost because it runs the Balanced+ algorithm and then visit every unit to check if it is in an allowed zone, moving it when necessary. On the other hand, it produces the most realistic results to support physical deployment of the EDUs.
