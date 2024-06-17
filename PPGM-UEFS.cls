@@ -254,7 +254,7 @@
 \fontfamily{cmr}
 
 \usepackage[english, brazil]{babel}   % acentos
-\selectlanguage{brazil}   % Portugues
+\selectlanguage{english}   % Inglês
 
 %Change bibliography name to references for Report document class
 \renewcommand{\bibname}{Referências}
@@ -310,14 +310,14 @@
     \ifsu@appending
         \thechapter
     \else
-        \ifcase\thechapter\or Um\or Dois\or Tr\^es\or Quatro\or Cinco\or Seis\or
-                           Sete\or Oito\or Nove\or Dez\or Onze\or
-                           Doze\or Treze\or Quatorze\or Quinze\or
-                           Dezesseis\or Dezessete\or Dezoito\or Dezenove\or
-                           Vinte\or Vinte e um\or Vinte e dois\or Vinte e tr\^es\or
-                           Vinte e quatro\or Vinte e cinco\or Vinte e seis\or
-                           Vinte e sete\or Vinte e oito\or Vinte e nove\or
-                           Trinta\fi
+        \ifcase\thechapter\or One\or Two\or Three\or Four\or Five\or Six\or
+                           Seven\or Eight\or Nine\or Ten\or Eleven\or
+                           Twelve\or Thirteen\or Fourteen\or Fifteen\or
+                           Sixteen\or Seventeen\or Eighteen\or Nineteen\or
+                           Twenty\or Twenty-one\or Twenty-two\or Twenty-three\or
+                           Twenty-four\or Twenty-five\or Twenty-six\or
+                           Twenty-seven\or Twenty-eight\or Twenty-nine\or
+                           Thirty\fi
     \fi
 }
 
@@ -481,8 +481,8 @@
         \vspace*{10mm}                
         \singlespacing
         \LARGE\bfseries{\@thesistitle} \Large \par
-        \vspace*{5mm}
-        \@thesissubtitle \par
+        % \vspace*{5mm}
+        % \@thesissubtitle \par
         \vspace*{20mm}
         \mdseries
         \if@usvolume
@@ -663,9 +663,9 @@
     \ifpdf
         \pdfbookmark[1]{Sumário}{toc} \tableofcontents
         \newpage
-        \pdfbookmark[1]{Lista de Tabelas}{lot}\listoftables
+        \pdfbookmark[1]{List of Tables}{lot}\listoftables
         \newpage
-        \pdfbookmark[1]{Lista de Figuras}{lof} \listoffigures
+        \pdfbookmark[1]{List of Figures}{lof} \listoffigures
         \newpage
     \else
         \tableofcontents
@@ -688,7 +688,7 @@
 % DEFINITIONS AND ABBREVIATIONS
 %------------------------------------------------------------------------
 \newenvironment{thesisabbreviations}{
-    \writesectiontitle{Lista de Siglas}
+    \writesectiontitle{List of Acronyms}
     \thispagestyle{plain}
 }
 
@@ -759,8 +759,8 @@
 \usepackage{newfloat}
 \DeclareFloatingEnvironment[
     fileext=loq,
-    listname={Lista de Quadros},
-    name=Quadro,
+    listname={List of Charts},
+    name=Chart,
     placement=tbhp,
     within=none,
 ]{quadro}
