@@ -31,7 +31,7 @@
 
 %%% Fancy page , chapters and sections headings
 %\documentclass[fancyheadings, fancychapter, subook]{Classes/PPGM-UEFS}
-\documentclass[fancyheadings, fancychapter, sureport]{PPGM-UEFS}
+\documentclass[fancyheadings, fancychapter, sureport, twoside]{PPGM-UEFS}
 
 
 %%%-------------------------------------------------------------------------------
@@ -109,6 +109,11 @@
 \makeatother
 
 %%%-------------------------------------------------------------------------------
+%%% Hifenização
+%%%-------------------------------------------------------------------------------
+\hyphenation{pei-xo-to}
+
+%%%-------------------------------------------------------------------------------
 %%% Dados da tese/dissertação
 %%%-------------------------------------------------------------------------------
 \newif\ifdoutor
@@ -124,7 +129,7 @@
 
 %% Preencha as informações abaixo
 \newcommand{\ppgmtitulo}       {Classificação de Riscos e Planejamento de Soluções Inteligentes Utilizando Dados Georreferenciados Abertos para Construção de Cidades Resilientes}
-\newcommand{\ppgmsubtitulo}    {Sub-título da Dissertação ou Tese}
+\newcommand{\ppgmsubtitulo}    {}
 \newcommand{\ppgmautor}        {João Paulo Just Peixoto}
 \newcommand{\ppgmorientador}   {Daniel G. Costa}
 \newcommand{\ppgmcoorientador} {Washington de J. S. da Franca Rocha}
@@ -139,12 +144,12 @@
 %% Indique os membros internos da banca (nome e instituição)
 % É possível acrescentar membros copiando o comando
 %\ppgmbanca{Prof. Dr. Washington de J. S. da Franca Rocha}{\ppgmcooruniv}
-\ppgmbanca{Profa. Dra. Rosângela Leal Santos}{\ppgmcooruniv}
+\ppgmbanca{Profa. Dra. Elane Fiuza Borges}{\ppgmcooruniv}
 
 %% Indique os membros externos da banca (nome e instituição)
+\ppgmbancaext{Prof. Dr. Carlos Alberto Cioce Sampaio}{UNIVERSIDADE REGIONAL DE BLUMENAU}
 \ppgmbancaext{Prof. Dr. Ricardo Araújo Rios}{UNIVERSIDADE FEDERAL DA BAHIA}
 \ppgmbancaext{Prof. Dr. Rodrigo Tripodi Calumby}{UNIVERSIDADE ESTADUAL DE FEIRA DE SANTANA}
-\ppgmbancaext{Prof. Dra. Elane Fiuza Borges}{UNIVERSIDADE ESTADUAL DE FEIRA DE SANTANA}
 
 %%%-------------------------------------------------------------------------------
 %%% Sumário do PDF
@@ -199,6 +204,7 @@
 \usepackage{listings}
 \usepackage{lipsum}
 \usepackage{caption}
+\usepackage{pdfpages}
 
 % Múltiplas referências
 \usepackage[backend=biber,style=abnt,giveninits,repeatfields,extrayear]{biblatex}
@@ -221,8 +227,8 @@
 
 % Traduz os títulos dos algoritmos
 \makeatletter
-\renewcommand{\ALG@name}{Algoritmo}
-\renewcommand{\listalgorithmname}{Lista de  \ALG@name s}
+\renewcommand{\ALG@name}{Algorithm}
+\renewcommand{\listalgorithmname}{List of  \ALG@name s}
 \renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
 \renewcommand{\algorithmicensure}{\textbf{Saída:}}
 \makeatother
@@ -266,8 +272,10 @@
     %%----------------------------------------------------------------------------
     % Comente qualquer linha que não queira inserir
     \include{Others/FolhaRosto}
+    \includepdf[pages={1}]{ficha_catalografica.pdf}
+    % \include{Others/FolhaAssinaturas}
+    \includepdf[pages={1}]{folha_banca.pdf}
     \include{Others/NotaEstilo}
-    \include{Others/FolhaAssinaturas}
     % \include{Others/Dedicatoria}
     \include{Others/Agradecimentos}
 
@@ -278,6 +286,7 @@
     \begin{romanpagenumbers}
         % Resumo e abstract
         \include{Others/Resumo}
+        \selectlanguage{english}
         \include{Others/Abstract}
         
         % Sumários
